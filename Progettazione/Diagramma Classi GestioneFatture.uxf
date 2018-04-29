@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>60</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>_ID_
+--
+-anno : int
+-numeroProgressivo : int
+--
++ID(in anno:int)
++getID():int
++setID(in ID): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>780</x>
+      <y>50</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Diagramma delle
+classi GestioneFatture
+
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>60</y>
+      <w>210</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>_Fattura_
+--
+-data:Data
+-id:ID
+-nomeEnte:string
+-descrizioneProdotto:String
+-importo:int
+-metodoPagamento:char
+--
++Fattura(in data:Data,in id:ID,
+nomeEnte:String,
+in descrizioneProdotto:String
+in importo:int,
+in metodoPagamento:char)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>60</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>_ElencoFatture_
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>220</y>
+      <w>210</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>_Data_
+--
+-giorno:int
+-mese:int
+-anno:int
+--
++Data(in giorno: int,in mese:int,
+in anno:int)
++getGiorno():int
++getMese():int
++getAnno():int
++setgiorno(in giorno:int)
++setMese(in mese:int)
++setAnno(in anno:int)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

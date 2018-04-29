@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>120</x>
+      <y>220</y>
+      <w>60</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Actor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>290</x>
+      <y>80</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Crea una fattura
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>300</x>
+      <y>140</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Visualizza le fatture
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>310</x>
+      <y>220</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Registrare pagamento
+nuova fattura
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>340</x>
+      <y>300</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>visualizza la somma 
+delle fatture non pagate 
+da uno specifico cliente</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>310</x>
+      <y>410</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>visualizza le
+fatture non pagate 
+in ordine alfabetico
+per cliente</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>320</x>
+      <y>520</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Visualizza dati
+di una fattura
+con codice univoco</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>90</y>
+      <w>170</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;160.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>160</y>
+      <w>180</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;90.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>220</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;30.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>240</y>
+      <w>220</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;200.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>240</y>
+      <w>190</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;170.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>240</y>
+      <w>200</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;180.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>180</x>
+      <y>560</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Salva la sessione</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>240</y>
+      <w>60</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;40.0;340.0</additional_attributes>
+  </element>
+</diagram>
