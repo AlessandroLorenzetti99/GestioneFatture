@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
-      <y>60</y>
+      <x>40</x>
+      <y>40</y>
       <w>210</w>
       <h>130</h>
     </coordinates>
@@ -24,8 +24,8 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>780</x>
-      <y>50</y>
+      <x>770</x>
+      <y>30</y>
       <w>160</w>
       <h>50</h>
     </coordinates>
@@ -38,10 +38,10 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>290</x>
-      <y>60</y>
+      <x>280</x>
+      <y>40</y>
       <w>210</w>
-      <h>220</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>_Fattura_
 --
@@ -51,12 +51,18 @@ bg=blue</panel_attributes>
 -descrizioneProdotto:String
 -importo:int
 -metodoPagamento:char
+-statoFattura:char
 --
 +Fattura(in data:Data,in id:ID,
 nomeEnte:String,
 in descrizioneProdotto:String
 in importo:int,
 in metodoPagamento:char)
++getNomeEnte:String
++setNomeEnte():void
++getDescrizioneProdotto:String
++getImporto:int
++getMetodoPagamento:char
 
 </panel_attributes>
     <additional_attributes/>
@@ -64,21 +70,27 @@ in metodoPagamento:char)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>530</x>
-      <y>60</y>
-      <w>210</w>
-      <h>130</h>
+      <x>520</x>
+      <y>40</y>
+      <w>230</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>_ElencoFatture_
 --
+-elencoFatture[]:Fattura
+-MAX_FATTURE:int
+--
++ElencoFatture()
++inserisciFattura:void
++visualizzaFatture:elencoFatture[]
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
-      <y>220</y>
+      <x>40</x>
+      <y>200</y>
       <w>210</w>
       <h>220</h>
     </coordinates>
@@ -98,6 +110,33 @@ in anno:int)
 +setAnno(in anno:int)
 
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>280</x>
+      <y>370</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Stato:
+Se la fattura è pagata
+viene inserito S 
+dall'utente
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>530</x>
+      <y>190</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>MAX_FATTURE=1000
+bg=green</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

@@ -177,4 +177,17 @@ con codice univoco</panel_attributes>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;40.0;340.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>560</x>
+      <y>50</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Diagramma Casid'uso
+Gestione Fatture
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
