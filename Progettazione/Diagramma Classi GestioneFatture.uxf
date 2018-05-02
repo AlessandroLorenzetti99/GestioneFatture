@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>40</y>
+      <x>0</x>
+      <y>60</y>
       <w>210</w>
       <h>130</h>
     </coordinates>
@@ -24,8 +24,8 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>770</x>
-      <y>30</y>
+      <x>810</x>
+      <y>60</y>
       <w>160</w>
       <h>50</h>
     </coordinates>
@@ -38,8 +38,8 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>40</y>
+      <x>240</x>
+      <y>60</y>
       <w>210</w>
       <h>320</h>
     </coordinates>
@@ -70,27 +70,37 @@ in metodoPagamento:char)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>40</y>
-      <w>230</w>
-      <h>140</h>
+      <x>470</x>
+      <y>60</y>
+      <w>330</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>_ElencoFatture_
 --
--elencoFatture[]:Fattura
--MAX_FATTURE:int
+-head:Nodo
+-elementi:int
 --
 +ElencoFatture()
-+inserisciFattura:void
-+visualizzaFatture:elencoFatture[]
++getLinkPosizione(in posizione:int):Nodo
++creaNodo(in fattura:Fattura, in link:Nodo):Nodo
++getElementi():int
++inserisciTesta(fattura:Fattura):void
++inserisciCoda(fattura:Fattura):void
++inserisciPosizione(fattura:Fattura, in posizione:int)
+:void
++eliminaInTesta():void
++eliminaInPosizione(in posizione:int):void
++visita(in posizione:int):String
++toString():String
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>200</y>
+      <x>0</x>
+      <y>220</y>
       <w>210</w>
       <h>220</h>
     </coordinates>
@@ -115,8 +125,8 @@ in anno:int)
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>280</x>
-      <y>370</y>
+      <x>240</x>
+      <y>390</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
@@ -128,15 +138,23 @@ bg=green</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLNote</id>
+    <id>UMLClass</id>
     <coordinates>
-      <x>530</x>
-      <y>190</y>
-      <w>160</w>
-      <h>30</h>
+      <x>480</x>
+      <y>370</y>
+      <w>210</w>
+      <h>150</h>
     </coordinates>
-    <panel_attributes>MAX_FATTURE=1000
-bg=green</panel_attributes>
+    <panel_attributes>_Nodo_
+--
+-info:Fattura
+-link:Nodo
+--
++Nodo(in fattura:Fattura)
++setInfo(fattura:Fattura)
++getInfo():Fattura
++setLink(in link:Nodo)
++getLink:Nodo</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
