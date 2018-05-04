@@ -4,8 +4,8 @@
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>120</x>
-      <y>220</y>
+      <x>130</x>
+      <y>200</y>
       <w>60</w>
       <h>110</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>290</x>
-      <y>80</y>
+      <x>380</x>
+      <y>50</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -27,8 +27,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>300</x>
-      <y>140</y>
+      <x>350</x>
+      <y>120</y>
       <w>160</w>
       <h>50</h>
     </coordinates>
@@ -39,8 +39,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>310</x>
-      <y>220</y>
+      <x>320</x>
+      <y>200</y>
       <w>190</w>
       <h>50</h>
     </coordinates>
@@ -52,8 +52,8 @@ nuova fattura
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>340</x>
-      <y>300</y>
+      <x>330</x>
+      <y>270</y>
       <w>210</w>
       <h>90</h>
     </coordinates>
@@ -65,8 +65,8 @@ da uno specifico cliente</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>310</x>
-      <y>410</y>
+      <x>330</x>
+      <y>380</y>
       <w>210</w>
       <h>90</h>
     </coordinates>
@@ -79,8 +79,8 @@ per cliente</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>320</x>
-      <y>520</y>
+      <x>330</x>
+      <y>490</y>
       <w>220</w>
       <h>70</h>
     </coordinates>
@@ -92,30 +92,30 @@ con codice univoco</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>90</y>
-      <w>170</w>
-      <h>180</h>
+      <x>150</x>
+      <y>60</y>
+      <w>250</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;160.0;150.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;230.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>160</y>
-      <w>180</w>
+      <x>150</x>
+      <y>140</y>
+      <w>220</w>
       <h>110</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;90.0;160.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;200.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>220</y>
+      <x>150</x>
+      <y>200</y>
       <w>190</w>
       <h>50</h>
     </coordinates>
@@ -125,41 +125,41 @@ con codice univoco</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>240</y>
-      <w>220</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;200.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>140</x>
-      <y>240</y>
-      <w>190</w>
-      <h>230</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;170.0;210.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>140</x>
-      <y>240</y>
+      <x>150</x>
+      <y>220</y>
       <w>200</w>
-      <h>330</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;180.0;310.0</additional_attributes>
+    <additional_attributes>10.0;10.0;180.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>220</y>
+      <w>200</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;180.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>220</y>
+      <w>200</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;180.0;300.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>180</x>
-      <y>560</y>
+      <x>190</x>
+      <y>540</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -169,8 +169,8 @@ con codice univoco</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>240</y>
+      <x>150</x>
+      <y>220</y>
       <w>60</w>
       <h>360</h>
     </coordinates>
@@ -180,8 +180,8 @@ con codice univoco</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>560</x>
-      <y>50</y>
+      <x>570</x>
+      <y>30</y>
       <w>150</w>
       <h>50</h>
     </coordinates>
@@ -189,5 +189,64 @@ con codice univoco</panel_attributes>
 Gestione Fatture
 bg=blue</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>210</y>
+      <w>190</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>170.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>300</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>90.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>620</x>
+      <y>300</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Inserisci ID</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>330</y>
+      <w>170</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>330</y>
+      <w>180</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;190.0</additional_attributes>
   </element>
 </diagram>
