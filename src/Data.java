@@ -5,7 +5,7 @@ public class Data
 	private int mese;
 	private int anno;
 	
-	public Data()
+	public Data(int giorno, int mese,int anno)
 	{
 		setGiorno(giorno);
 		setMese(mese);
