@@ -1,18 +1,23 @@
+import java.time.LocalDate;
 
 public class Fattura 
 {
-	private Data data;
-	private ID id;
+	private LocalDate data;
+	//private ID id;  crea attributo anno e numero progressivo
+	private int anno;
+	private static int i = 0; //numero progressivo
 	private String nomeEnte;
 	private String descrizioneProdotto;
 	private int importo;
 	private char metodoPagamento;
 	private char statoFattura;
 	
-	public Fattura(Data data,ID id,String nomeEnte,String descrizioneProdotto, int importo,char metodoPagamento,char statoFattura)
+	public Fattura(LocalDate data, int anno, int i,String nomeEnte,String descrizioneProdotto, int importo,char metodoPagamento,char statoFattura)
 	{
 		setData(data);
-		setId(id);
+		//setId(id);
+		setI(i);
+		setAnno(anno);
 		setNomeEnte(nomeEnte);
 		setDescrizioneProdotto(descrizioneProdotto);
 		setImporto(importo);
@@ -20,12 +25,12 @@ public class Fattura
 		setStatoFattura(statoFattura);
 	}
 
-	public Data getData() 
+	public LocalDate getData() 
 	{
 		return data;
 	}
 
-	public void setData(Data data)
+	public void setData(LocalDate data)
 {
 		this.data = data;
 	}
@@ -40,7 +45,7 @@ public class Fattura
 		this.nomeEnte = nomeEnte;
 	}
 
-	public ID getId()
+	/*public ID getId()
 	{
 		return id;
 	}
@@ -49,6 +54,7 @@ public class Fattura
 	{
 		this.id = id;
 	}
+	*/
 
 	public String getDescrizioneProdotto()
 	{
@@ -91,5 +97,30 @@ public class Fattura
 	}
 	
 	
+	
+	public String toString()
+	{
+		return "Fattura numero:" + getAnno() + " " +getI()  + '\n' + "DATA:" + getData() + '\n' + "NOME:" + getNomeEnte() + '\n' + "DESCRIZIONE:" + getDescrizioneProdotto() + '\n' + "IMPORTO" + getImporto() + '\n' + "M.PAGAM. :" + getMetodoPagamento() + '\n' + "STATO:" + getStatoFattura();
+	}
+
+	public int getAnno()
+	{
+		return anno;
+	}
+
+	public void setAnno(int anno)
+	{
+		this.anno = anno;
+	}
+
+	public static int getI()
+	{
+		return i;
+	}
+
+	public static void setI(int i) 
+	{
+		Fattura.i = i;
+	}
 
 }
