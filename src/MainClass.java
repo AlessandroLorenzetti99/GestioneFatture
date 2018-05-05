@@ -18,6 +18,8 @@ public class MainClass {
 		Fattura f1 = new Fattura(data1, 0, 0, "Prova", "No descrizione", 100, 'P', 'P');
 		
 		System.out.println(f1.toString());
+		
+		
 
 	}
 
