@@ -24,6 +24,18 @@ public class Fattura
 		setMetodoPagamento(metodoPagamento);
 		setStatoFattura(statoFattura);
 	}
+	
+	public Fattura()
+	{
+		setData(null);
+		setAnno(0);
+		setDescrizioneProdotto(null);
+		setImporto(0);
+		setI(0);
+		setMetodoPagamento(' ');
+		setStatoFattura(' ');
+		
+	}
 
 	public LocalDate getData() 
 	{
