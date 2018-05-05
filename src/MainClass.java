@@ -11,13 +11,11 @@ public class MainClass {
 
 	public static void main(String[] args) 
 	{
-		//--------------Test Classe Fattura------------------
-		LocalDate data1= LocalDate.of(2018, 1, 1);
-		System.out.println(data1.toString());
+		String[] elenco = {"Aggiungi fattura","Segnaa Fattura come errata","Registra pag. nuova fattura","Visualizza fatture in ordine di data di emissione","visualizza faytture non pagate "};
+		Menu m1 = new Menu(elenco);
 		
-		Fattura f1 = new Fattura(data1, 0, 0, "Prova", "No descrizione", 100, 'P', 'P');
-		
-		System.out.println(f1.toString());
+		m1.visualizza();
+		m1.scelta();
 		
 		
 

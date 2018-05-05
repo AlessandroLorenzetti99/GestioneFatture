@@ -10,6 +10,7 @@ public class ElencoFatture implements Serializable
 {
 	private Nodo head;
 	private int elementi;
+	
 	public ElencoFatture()
 	{
 		head=null;
@@ -19,9 +20,9 @@ public class ElencoFatture implements Serializable
 	{
 		return elementi;
 	}
-	private Nodo creaNodo(Fattura persona, Nodo link)
+	private Nodo creaNodo(Fattura fattura, Nodo link)
 	{
-		Nodo nodo=new Nodo(persona);
+		Nodo nodo=new Nodo(fattura);
 		nodo.setLink(link);
 		return nodo;
 	}
@@ -42,9 +43,9 @@ public class ElencoFatture implements Serializable
 		}
 		return p;
 	}
-	public void inserisciInTesta(Fattura persona)
+	public void inserisciInTesta(Fattura fattura)
 	{
-		Nodo p=creaNodo(persona,head);
+		Nodo p=creaNodo(fattura,head);
 		head=p;
 		elementi++;
 	}
@@ -62,32 +63,32 @@ public class ElencoFatture implements Serializable
 		}
 		return risultato;
 	}
-	public void inserisciInCoda(Fattura persona) throws ElencoFattureException
+	public void inserisciInCoda(Fattura fattura) throws ElencoFattureException
 	{
 		if(elementi==0)
 		{
-			inserisciInTesta(persona);
+			inserisciInTesta(fattura);
 			return;
 		}
-		Nodo pn=creaNodo(persona,null);
+		Nodo pn=creaNodo(fattura,null);
 		Nodo p=getLinkPosizione(elementi);
 		p.setLink(pn);
 		elementi++;
 	}
-	public void inserisciInPosizione(int posizione,Fattura persona) throws ElencoFattureException
+	public void inserisciInPosizione(int posizione,Fattura fattura) throws ElencoFattureException
 	{
 		if(posizione<=1)
 		{
-			inserisciInTesta(persona);
+			inserisciInTesta(fattura);
 			return;
 		}
 		if(posizione>elementi)
 		{
-			inserisciInCoda(persona);
+			inserisciInCoda(fattura);
 			return;
 		}
 		Nodo precedente=getLinkPosizione(posizione-1);
-		Nodo pn=creaNodo(persona,getLinkPosizione(posizione));
+		Nodo pn=creaNodo(fattura,getLinkPosizione(posizione));
 		precedente.setLink(pn);
 		elementi++;
 	}
@@ -168,20 +169,21 @@ public class ElencoFatture implements Serializable
 		file.closeFile();
 	}
 	*/
+	/*
 	public ElencoFatture importaCSV(String nomeFile) throws IOException, FileException, ElencoFattureException
 	{
 		ElencoFatture festa=new ElencoFatture();
 		TextFile file=new TextFile(nomeFile,'R');
 		String rigaLetta;
-		String[] elementiPersona;
+		String[] elementiFattura;
 		Fattura persona;
 		try
 		{
 			while(true)
 			{
 				rigaLetta=file.fromFile();
-				elementiPersona=rigaLetta.split(";");
-				persona=new Fattura(elementiPersona[0],elementiPersona[1].charAt(0),elementiPersona[2]);
+				elementiFattura=rigaLetta.split(";");
+				persona=new Fattura(elementiFattura[0],elementiFattura[1].charAt(0),elementiFattura[2]);
 				festa.inserisciInCoda(persona);
 			}
 		}
@@ -195,6 +197,7 @@ public class ElencoFatture implements Serializable
 			
 		return festa;
 	}
+	*/
 	public void salvaFesta(String nomeFile) throws IOException
 	{
 		FileOutputStream file=new FileOutputStream(nomeFile);
@@ -203,6 +206,7 @@ public class ElencoFatture implements Serializable
 		writer.flush();
 		file.close();
 	}
+	/*
 	public Festa caricaFesta(String nomeFile) throws ClassNotFoundException, IOException
 	{
 		FileInputStream file=new FileInputStream(nomeFile);
@@ -211,4 +215,5 @@ public class ElencoFatture implements Serializable
 		file.close();
 		return f2;
 	}
+	*/
 }
