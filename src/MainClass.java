@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -25,18 +26,55 @@ public class MainClass
 		{
 		case 1:
 			System.out.println("inserisci anno della fattura:");
-			f.setAnno(tastiera.readInt());
+			try {
+				f.setAnno(tastiera.readInt());
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			}
 			System.out.println("Inserisci il nome ente della fattura");
 			f.setNomeEnte(onlyString.nextLine());
 			System.out.println("inserisci la descrizione del prodotto:");
 			f.setDescrizioneProdotto(onlyString.nextLine());
 			System.out.println("inserisci importo:");
-			f.setImporto(tastiera.readInt());
+			try {
+				f.setImporto(tastiera.readInt());
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			}
 			System.out.println("Inserisci metodo di pagamento:");
-			f.setMetodoPagamento(tastiera.readChar());
+			try {
+				f.setMetodoPagamento(tastiera.readChar());
+			} catch (NumberFormatException e1) {
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			}
 			System.out.println("Inserisci lo stato dela fattura");
-			f.setStatoFattura(tastiera.readChar());
-			lista.inserisciInCoda(f);
+			try {
+				f.setStatoFattura(tastiera.readChar());
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			}
+			try {
+				lista.inserisciInCoda(f);
+			} catch (ElencoFattureException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			}
 			break;
 		case 2:
 			break;
