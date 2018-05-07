@@ -21,6 +21,11 @@ public class MainClass
 		Fattura f = new Fattura();
 		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnaa Fattura come errata","3.   --->   Registra pag. nuova fattura","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza faytture non pagate "};
 		Menu m1 = new Menu(elenco);
+		int continua = 0; // se = 1 stop
+		
+		while(continua == 0)
+		{
+			
 		
 		switch (m1.scelta())
 		{
@@ -75,8 +80,26 @@ public class MainClass
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
 			}
+			try 
+			{
+				lista.inserisciInCoda(f);
+			} 
+			catch (ElencoFattureException e)
+			{
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			}
 			break;
 		case 2:
+			try
+			{
+				lista.visualizza(1);
+			} 
+			catch (ElencoFattureException e)
+			{
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			}
 			break;
 			
 		case 3:
@@ -94,7 +117,22 @@ public class MainClass
 			break;
 		}
 		
+		System.out.println("Continuare?");
+		try
+		{
+			continua = tastiera.readInt();
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Errore generico");
+		} 
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			System.out.println("Errore generico");
+		}
 
+	}
+		
 	}
 
 }
