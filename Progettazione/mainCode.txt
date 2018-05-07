@@ -1,19 +1,4 @@
-import java.io.IOException;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
-import java.time.Period;
-import java.time.temporal.ChronoUnit;
-import java.util.Locale;
-import java.util.Scanner;
 
-public class MainClass 
-{
-
-	public static void main(String[] args) 
-	{
 		ConsoleInput tastiera = new ConsoleInput();
 		Scanner onlyString = new Scanner(System.in);
 		ElencoFatture lista = new ElencoFatture();
@@ -91,8 +76,6 @@ public class MainClass
 			}
 			break;
 		case 2:
-			//Segnala Fattura come pagata
-			Fattura f5 = new Fattura();
 			int posizione = 0;
 			System.out.println("Inserire l numero della fattura da segnalare come pagata:");
 			try {
@@ -104,17 +87,7 @@ public class MainClass
 				// TODO Auto-generated catch block
 				System.out.println("Input inserito non corretto");
 			}
-			
-			try {
-				f5 = lista.getFattura(posizione);
-			} catch (ElencoFattureException e1) {
-				// TODO Auto-generated catch block
-				System.out.println("Eccexione");
-			}
-			
-			f5.setStatoFattura('P');
-			
-			
+			lista.segnalaFatturaErrata(posizione);
 			System.out.println(lista.toString());
 			
 			
@@ -150,6 +123,5 @@ public class MainClass
 		}
 
 	}
-	}
-
-}
+		
+	

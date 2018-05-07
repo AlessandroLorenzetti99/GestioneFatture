@@ -1,0 +1,45 @@
+ElencoFatture lista = new ElencoFatture();
+		Scanner tastiera = new Scanner(System.in);
+		Fattura f1 = new Fattura(null, 2018, 1, "Alessandro", "descrizione", 115, 'P', 'P');
+		Fattura f2 = new Fattura(null, 2018, 1, "Cavoli", "non va", 115, 'P', 'P');
+		
+		try {
+			lista.inserisciInCoda(f1);
+		} catch (ElencoFattureException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			lista.inserisciInCoda(f2);
+		} catch (ElencoFattureException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(lista.toString());
+		System.out.println(lista.getElementi());
+		
+		
+		
+		try {
+			System.out.println(lista.visualizza(0));
+		} catch (ElencoFattureException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Errore");
+		}
+		try {
+			System.out.println(lista.visualizza(1));
+		} catch (ElencoFattureException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Errore");
+		}
+		
+		try {
+			System.out.println(lista.visualizza(2));
+		} catch (ElencoFattureException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Errore");
+		}
+		
+		
+	}

@@ -15,6 +15,7 @@ public class Fattura
 	
 	public Fattura(LocalDate data, int anno, int i,String nomeEnte,String descrizioneProdotto, int importo,char metodoPagamento,char statoFattura)
 	{
+		i++;
 		setData(data);
 		//setId(id);
 		setI(i);
@@ -133,6 +134,7 @@ public class Fattura
 
 	public static void setI(int i) 
 	{
+		
 		Fattura.i = i;
 	}
 
