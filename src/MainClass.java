@@ -91,15 +91,19 @@ public class MainClass
 			}
 			break;
 		case 2:
-			
-			// * Test Visualizza 07/05/2018 09:05
+			int posizione = 0;
+			System.out.println("Inserire l numero della fattura da segnalare come pagata:");
 			try {
-				System.out.println(lista.visualizza(1));
-			} catch (ElencoFattureException e1) {
+				posizione = tastiera.readInt();
+			} catch (NumberFormatException e1) {
 				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
+				System.out.println("eccezione numerica...");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				System.out.println("Input inserito non corretto");
 			}
-			
+			lista.segnalaFatturaErrata(posizione);
+			System.out.println(lista.toString());
 			
 			
 			break;

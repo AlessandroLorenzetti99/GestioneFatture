@@ -216,4 +216,16 @@ public class ElencoFatture implements Serializable
 		return f2;
 	}
 	*/
+	
+	public void segnalaFatturaErrata(int posizione)
+	{
+		
+	}
+	
+	public void segnalaFatturaPagata(int posizione) throws ElencoFattureException
+	{
+		Fattura f1 = new Fattura();
+		f1 = getFattura(posizione);
+		f1.setStatoFattura('P');
+	}
 }
