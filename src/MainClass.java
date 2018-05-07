@@ -14,12 +14,13 @@ public class MainClass
 
 	public static void main(String[] args) 
 	{
+		int posizione = 0;
 		ConsoleInput tastiera = new ConsoleInput();
 		Scanner onlyString = new Scanner(System.in);
 		ElencoFatture lista = new ElencoFatture();
 		LocalDate data1= LocalDate.of(2018, 1, 1);
 		Fattura f = new Fattura();
-		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnaa Fattura come errata","3.   --->   Registra pag. nuova fattura","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza faytture non pagate "};
+		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza faytture non pagate "};
 		Menu m1 = new Menu(elenco);
 		int continua = 0; // Se = 1 stop
 		
@@ -93,7 +94,7 @@ public class MainClass
 		case 2:
 			//Segnala Fattura come pagata
 			Fattura f5 = new Fattura();
-			int posizione = 0;
+			
 			System.out.println("Inserire l numero della fattura da segnalare come pagata:");
 			try {
 				posizione = tastiera.readInt();
@@ -121,6 +122,32 @@ public class MainClass
 			break;
 			
 		case 3:
+			posizione = 0;
+			Fattura f6=new Fattura();
+			System.out.println("Inserisci numero fattura da segnalare come errata");
+			try {
+				posizione = tastiera.readInt();
+			} catch (NumberFormatException e2) {
+				// TODO Auto-generated catch block
+				System.out.println("Numero non accettato");
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				System.out.println("Numero non valido");
+			}
+			try {
+				f6 = lista.getFattura(posizione);
+			} catch (ElencoFattureException e1) {
+				// TODO Auto-generated catch block
+			System.out.println("Errore");
+			}
+			
+			f6.setFatturaErrata(true);
+			try {
+				System.out.println(lista.visualizza(posizione));
+			} catch (ElencoFattureException e1) {
+				// TODO Auto-generated catch block
+				System.out.println("errore");
+			}
 			
 			break;
 			
