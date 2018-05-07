@@ -11,6 +11,7 @@ public class Fattura
 	private int importo;
 	private char metodoPagamento;
 	private char statoFattura;
+	private boolean fatturaErrata;
 	
 	public Fattura(LocalDate data, int anno, int i,String nomeEnte,String descrizioneProdotto, int importo,char metodoPagamento,char statoFattura)
 	{
@@ -112,7 +113,7 @@ public class Fattura
 	
 	public String toString()
 	{
-		return "Fattura numero:" + getAnno() + " " +getI()  + '\n' + "DATA:" + getData() + '\n' + "NOME:" + getNomeEnte() + '\n' + "DESCRIZIONE:" + getDescrizioneProdotto() + '\n' + "IMPORTO" + getImporto() + '\n' + "M.PAGAM. :" + getMetodoPagamento() + '\n' + "STATO:" + getStatoFattura();
+		return "Fattura numero:" + getAnno() + "_" +getI()  +" " + isFatturaErrata() + '\n' + "DATA:" + getData() + '\n' + "NOME:" + getNomeEnte() + '\n' + "DESCRIZIONE:" + getDescrizioneProdotto() + '\n' + "IMPORTO" + getImporto() + '\n' + "M.PAGAM. :" + getMetodoPagamento() + '\n' + "STATO:" + getStatoFattura();
 	}
 
 	public int getAnno()
@@ -134,5 +135,17 @@ public class Fattura
 	{
 		Fattura.i = i;
 	}
+
+	public boolean isFatturaErrata() 
+	{
+		return fatturaErrata;
+	}
+
+	public void setFatturaErrata(boolean fatturaErrata)
+	{
+		this.fatturaErrata = fatturaErrata;
+	}
+	
+	
 
 }

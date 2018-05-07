@@ -145,7 +145,7 @@ public class ElencoFatture implements Serializable
 		Nodo p=getLinkPosizione(posizione);
 		return p.getInfo().toString();
 	}
-	public Fattura getInvitato(int posizione) throws ElencoFattureException
+	public Fattura getFattura(int posizione) throws ElencoFattureException
 	{
 		if(posizione<=0 || posizione>elementi)
 			throw new ElencoFattureException("inserimento invalido");

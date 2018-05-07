@@ -21,7 +21,7 @@ public class MainClass
 		Fattura f = new Fattura();
 		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnaa Fattura come errata","3.   --->   Registra pag. nuova fattura","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza faytture non pagate "};
 		Menu m1 = new Menu(elenco);
-		int continua = 0; // se = 1 stop
+		int continua = 0; // Se = 1 stop
 		
 		while(continua == 0)
 		{
@@ -91,15 +91,17 @@ public class MainClass
 			}
 			break;
 		case 2:
-			try
-			{
-				lista.visualizza(1);
-			} 
-			catch (ElencoFattureException e)
-			{
+			
+			// * Test Visualizza 07/05/2018 09:05
+			try {
+				System.out.println(lista.visualizza(1));
+			} catch (ElencoFattureException e1) {
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
 			}
+			
+			
+			
 			break;
 			
 		case 3:
@@ -113,7 +115,7 @@ public class MainClass
 			break;
 
 		default:
-			System.out.println("opsione non disponibile!");
+			System.out.println("opzione non disponibile!");
 			break;
 		}
 		
