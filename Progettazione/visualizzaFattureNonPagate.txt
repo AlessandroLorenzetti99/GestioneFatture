@@ -1,0 +1,35 @@
+//visualizza fatture non pagate dal cliente
+			Fattura f7 = new Fattura();
+			String nomeCliente = null;
+			
+			System.out.println("Inserisci il nome del cliente:");
+			nomeCliente = onlyString.nextLine();
+			
+			for (int i = 1; i < lista.getElementi(); i++)
+			{
+				try 
+				{
+					f7 = lista.getFattura(i);
+				} 
+				catch (ElencoFattureException e1)
+				{
+					// TODO Auto-generated catch block
+					System.out.println("Errore generico");
+				}
+				if (f7.getStatoFattura() != 'P' &&  f7.getNomeEnte().compareToIgnoreCase(nomeCliente)==0)
+				{
+					try
+					{
+						System.out.println(lista.visualizza(i));//lista.visualizza(i)
+					} 
+					catch (ElencoFattureException e)
+					{
+						// TODO Auto-generated catch block
+						System.out.println("errore");
+					}
+				}
+				else
+				{
+					System.out.println("Non funge");
+				}
+			}

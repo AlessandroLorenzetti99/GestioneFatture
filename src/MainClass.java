@@ -20,7 +20,7 @@ public class MainClass
 		ElencoFatture lista = new ElencoFatture();
 		LocalDate data1= LocalDate.of(2018, 1, 1);
 		Fattura f = new Fattura();
-		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza faytture non pagate "};
+		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate "};
 		Menu m1 = new Menu(elenco);
 		int continua = 0; // Se = 1 stop
 		
@@ -152,9 +152,42 @@ public class MainClass
 			break;
 			
 		case 4:
+			//Visualizza 
 			break;
 			
 		case 5:
+			//visualizza fatture non pagate dal cliente
+			Fattura f7 = new Fattura();
+			String nomeCliente = null;
+			
+			
+			int totaleFattureNonPagate  = 0;
+			System.out.println("Inserisci il nome del cliente:");
+			nomeCliente = onlyString.nextLine();
+			
+			for (int i = 1; i < lista.getElementi(); i++)
+			{
+				try 
+				{
+					f7 = lista.getFattura(i);
+				} 
+				catch (ElencoFattureException e1)
+				{
+					// TODO Auto-generated catch block
+					System.out.println("Errore generico");
+				}
+				if (f7.getStatoFattura() != 'P' &&  f7.getNomeEnte().compareToIgnoreCase(nomeCliente)==0)
+				{
+					totaleFattureNonPagate +=  f7.getImporto();
+				}
+				else
+				{
+					System.out.println("Non funge");
+				}
+			}
+			
+			System.out.println("It totale della fatture non pagate è:" + totaleFattureNonPagate);
+				
 			break;
 
 		default:
