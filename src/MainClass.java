@@ -156,7 +156,7 @@ public class MainClass
 			break;
 			
 		case 5:
-			//visualizza fatture non pagate dal cliente
+			//visualizza importo fatture non pagate dal cliente
 			Fattura f7 = new Fattura();
 			String nomeCliente = null;
 			
@@ -188,6 +188,43 @@ public class MainClass
 			
 			System.out.println("It totale della fatture non pagate è:" + totaleFattureNonPagate);
 				
+			break;
+			
+		case 6:
+			//visualizza importo fatture non pagate dal cliente
+			Fattura f8 = new Fattura();
+			String nomeCliente1 = null;
+			
+			
+			int totaleFatturePagate  = 0;
+			System.out.println("Inserisci il nome del cliente:");
+			nomeCliente = onlyString.nextLine();
+			
+			for (int i = 1; i < lista.getElementi(); i++)
+			{
+				try 
+				{
+					f7 = lista.getFattura(i);
+				} 
+				catch (ElencoFattureException e1)
+				{
+					// TODO Auto-generated catch block
+					System.out.println("Errore generico");
+				}
+				if (f8.getStatoFattura() == 'P' &&  f8.getNomeEnte().compareToIgnoreCase(nomeCliente)==0)
+				{
+					totaleFatturePagate +=  f8.getImporto();
+				}
+				else
+				{
+					System.out.println("Non funge");
+				}
+			}
+			
+			System.out.println("It totale della fatture  pagate è:" + totaleFatturePagate);
+				
+			
+			
 			break;
 
 		default:
