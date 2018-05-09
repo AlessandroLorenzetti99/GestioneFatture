@@ -31,6 +31,7 @@ public class MainClass
 		switch (m1.scelta())
 		{
 		case 1:
+			//Aggiungi \ crea fattura
 			System.out.println("inserisci anno della fattura:");
 			try {
 				f.setAnno(tastiera.readInt());
@@ -122,6 +123,7 @@ public class MainClass
 			break;
 			
 		case 3:
+			// segnala fattura errata
 			posizione = 0;
 			Fattura f6=new Fattura();
 			System.out.println("Inserisci numero fattura da segnalare come errata");
@@ -152,7 +154,41 @@ public class MainClass
 			break;
 			
 		case 4:
-			//Visualizza 
+			//Visualizza tutte fatture in ordine di data di emissione
+			
+			//trasferimento dati lista ---> Array
+			Fattura[] ArrayFatture;
+			
+			ArrayFatture = new Fattura[lista.getElementi()];
+			
+			for (int i = 1; i < lista.getElementi(); i++)
+			{
+				try {
+					ArrayFatture[i] = lista.getFattura(i);
+				} catch (ElencoFattureException e) {
+					// TODO Auto-generated catch block
+					System.out.println("Errore");
+				}
+			}
+			
+			//***************ORDINA DATI******************
+			
+			
+			
+			
+			
+			
+			//***********************************************
+			
+			
+			//*************VISUALIZZA DATI*****************
+			
+			
+			
+			
+			
+			//************************************************
+			
 			break;
 			
 		case 5:
