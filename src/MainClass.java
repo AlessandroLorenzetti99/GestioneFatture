@@ -226,6 +226,55 @@ public class MainClass
 			
 			
 			break;
+			
+		case 7:
+			
+			//visualizzare dati di una fattura tramite ID
+			int anno = 0;
+			int numeroIdentificativo = 0;  //i = numero progressivo fattura
+			Fattura f10 = new Fattura();
+			
+			System.out.println("Inserisci anno del ID dell'utente:");
+			try {
+				anno = tastiera.readInt();
+			} catch (NumberFormatException e1) {
+				// TODO Auto-generated catch block
+				System.out.println("Il numer inserito non è valido");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				System.out.println("il valore inserito non è un numero");
+			}
+			
+			System.out.println("Inserisci numero progressivo fattura");
+			try {
+				numeroIdentificativo = tastiera.readInt();
+			} catch (NumberFormatException e1) {
+				// TODO Auto-generated catch block
+				System.out.println("Il numer inserito non è valido");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				System.out.println("il valore inserito non è un numero");
+			}
+			
+			for (int i = 0; i < lista.getElementi(); i++)
+			{
+				try {
+					f10 = lista.getFattura(i);
+				} catch (ElencoFattureException e) {
+					// TODO Auto-generated catch block
+					System.out.println("Errore generico");
+				}
+				
+				if(f10.getAnno() == anno && f10.getI() == numeroIdentificativo)
+				{
+					f10.toString();
+				}
+				
+			}
+			
+			
+			
+			break;
 
 		default:
 			System.out.println("opzione non disponibile!");
