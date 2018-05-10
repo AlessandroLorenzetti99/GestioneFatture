@@ -157,4 +157,45 @@ public class Ordinatore
 	
 	}
 	
-}
+	public static int scambia(Fattura[] ArrayFatture, int pos1, int pos2)
+	{
+		Fattura f;
+		if (pos1<0 || pos2<0 || pos1>=ArrayFatture.length || pos2>=ArrayFatture.length)
+		{
+			return 1;
+		}
+		else
+		{
+			f = ArrayFatture[pos1];
+			ArrayFatture[pos1] = ArrayFatture[pos2];
+			ArrayFatture[pos2] = f;
+			return 0;
+		}
+	}
+	
+	private static Fattura[] copyArray(Fattura[] Array)
+	{
+		Fattura [] ArrayCopia = new Fattura[Array.length]; 
+		for (int i = 0; i < ArrayCopia.length; i++)
+			ArrayCopia[i] = Array[i];
+		
+			return ArrayCopia;
+		
+	}
+	
+	private static Fattura[] ordineAlfabetico(Fattura[] Array)
+	{
+		Fattura[] arrayCopia=copyArray(Array);
+		for (int i = 0; i < arrayCopia.length-1; i++) 
+		{
+			for (int j = i+1; j < arrayCopia.length; j++) 
+			{
+				if(arrayCopia[i].getData().isAfter(arrayCopia[j].getData()))
+					scambia(arrayCopia,i,j);
+			}
+		}
+		return arrayCopia;
+	}
+	}
+	
+
