@@ -198,7 +198,7 @@ public class ElencoFatture implements Serializable
 		return festa;
 	}
 	*/
-	public void salvaFesta(String nomeFile) throws IOException
+	public void salvaElencoFatture(String nomeFile) throws IOException
 	{
 		FileOutputStream file=new FileOutputStream(nomeFile);
 		ObjectOutputStream writer=new ObjectOutputStream(file);

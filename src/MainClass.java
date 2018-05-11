@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -9,13 +12,17 @@ import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class MainClass 
+public class MainClass implements Serializable 
 {
 
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		int posizione = 0;
 		ConsoleInput tastiera = new ConsoleInput();
+		
+		//InputStreamReader input = new InputStreamReader(System.in);
+		//BufferedReader tastiera = BufferedReader(input);
+		
 		Scanner onlyString = new Scanner(System.in);
 		ElencoFatture lista = new ElencoFatture();
 		LocalDate data1= LocalDate.of(2018, 1, 1);
@@ -23,6 +30,7 @@ public class MainClass
 		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate "};
 		Menu m1 = new Menu(elenco);
 		int continua = 0; // Se = 1 stop
+		
 		
 		while(continua == 0)
 		{
@@ -82,15 +90,21 @@ public class MainClass
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
 			}
-			try 
+			
+			//*******************AVVIO FILE DI STOCCAGGIO DATI*****************************
+				
+			try
 			{
-				lista.inserisciInCoda(f);
-			} 
-			catch (ElencoFattureException e)
-			{
+				lista.salvaElencoFatture("storage.bin");
+				
+			} catch (IOException e3) {
 				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
+				System.out.println("Errore");
 			}
+			
+			
+			//***********************************************************************************
+		
 			break;
 		case 2:
 			//Segnala Fattura come pagata

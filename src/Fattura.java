@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Fattura 
+public class Fattura implements Serializable
 {
 	private LocalDate data;
 	//private ID id;  crea attributo anno e numero progressivo
