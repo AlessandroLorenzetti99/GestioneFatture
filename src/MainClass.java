@@ -31,6 +31,23 @@ public class MainClass implements Serializable
 		Menu m1 = new Menu(elenco);
 		int continua = 0; // Se = 1 stop
 		
+		//***********************CARICAMENTO DATI DA STORAGE.BIN*************************
+		try 
+		{
+			lista.caricaElencoFatture("storage.bin");
+		} 
+		catch (ClassNotFoundException e4)
+		{
+			// TODO Auto-generated catch block
+			System.out.println("errore 1");
+		} 
+		catch (IOException e4)
+		{
+			// TODO Auto-generated catch block
+			System.out.println("Errore 2");
+		}
+		//*********************************************************************************************
+		
 		
 		while(continua == 0)
 		{

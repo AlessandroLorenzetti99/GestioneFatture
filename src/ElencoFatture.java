@@ -206,16 +206,16 @@ public class ElencoFatture implements Serializable
 		writer.flush();
 		file.close();
 	}
-	/*
-	public Festa caricaFesta(String nomeFile) throws ClassNotFoundException, IOException
+	
+	public Fattura caricaElencoFatture(String nomeFile) throws ClassNotFoundException, IOException
 	{
 		FileInputStream file=new FileInputStream(nomeFile);
 		ObjectInputStream reader=new ObjectInputStream(file);
-		Festa f2=(Festa)(reader.readObject());
+		Fattura f2=(Fattura)(reader.readObject());
 		file.close();
 		return f2;
 	}
-	*/
+	
 	
 	public void segnalaFatturaErrata(int posizione)
 	{
