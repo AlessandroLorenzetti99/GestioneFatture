@@ -25,9 +25,9 @@ public class MainClass implements Serializable
 		
 		Scanner onlyString = new Scanner(System.in);
 		ElencoFatture lista = new ElencoFatture();
-		LocalDate data1= LocalDate.of(2018, 1, 1);
+		
 		Fattura f = new Fattura();
-		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate "};
+		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate ","6   --->   visualizza importo fatture non pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza"};
 		Menu m1 = new Menu(elenco);
 		int continua = 0; // Se = 1 stop
 		
@@ -57,6 +57,7 @@ public class MainClass implements Serializable
 		switch (m1.scelta())
 		{
 		case 1:
+			LocalDate data1= LocalDate.now();
 			//Aggiungi \ crea fattura
 			System.out.println("inserisci anno della fattura:");
 			try {
@@ -303,12 +304,16 @@ public class MainClass implements Serializable
 			Fattura f10 = new Fattura();
 			
 			System.out.println("Inserisci anno del ID dell'utente:");
-			try {
+			try
+			{
 				anno = tastiera.readInt();
-			} catch (NumberFormatException e1) {
+			}
+			catch (NumberFormatException e1) {
 				// TODO Auto-generated catch block
 				System.out.println("Il numer inserito non è valido");
-			} catch (IOException e1) {
+			} 
+			catch (IOException e1)
+			{
 				// TODO Auto-generated catch block
 				System.out.println("il valore inserito non è un numero");
 			}
@@ -316,10 +321,12 @@ public class MainClass implements Serializable
 			System.out.println("Inserisci numero progressivo fattura");
 			try {
 				numeroIdentificativo = tastiera.readInt();
-			} catch (NumberFormatException e1) {
+			} catch (NumberFormatException e1) 
+			{
 				// TODO Auto-generated catch block
 				System.out.println("Il numer inserito non è valido");
-			} catch (IOException e1) {
+			} catch (IOException e1)
+			{
 				// TODO Auto-generated catch block
 				System.out.println("il valore inserito non è un numero");
 			}
@@ -342,6 +349,18 @@ public class MainClass implements Serializable
 			
 			
 			
+			break;
+		case 8:
+			for (int i = 1; i < lista.getElementi(); i++)
+			{
+				try {
+					System.out.println(lista.visualizza(i));
+				} catch (ElencoFattureException e)
+				{
+					// TODO Auto-generated catch block
+					System.out.println("errore");
+				}
+			}
 			break;
 
 		default:
