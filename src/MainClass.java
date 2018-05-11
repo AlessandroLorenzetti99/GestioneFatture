@@ -34,13 +34,14 @@ public class MainClass implements Serializable
 		//***********************CARICAMENTO DATI DA STORAGE.BIN*************************
 		try 
 		{
+			//lista.salvaElencoFatture("storage.bin");
 			lista.caricaElencoFatture("storage.bin");
 		} 
 		catch (ClassNotFoundException e4)
 		{
 			// TODO Auto-generated catch block
 			System.out.println("errore 1");
-		} 
+		}
 		catch (IOException e4)
 		{
 			// TODO Auto-generated catch block

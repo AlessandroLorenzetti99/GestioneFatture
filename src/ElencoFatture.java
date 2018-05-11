@@ -207,13 +207,14 @@ public class ElencoFatture implements Serializable
 		file.close();
 	}
 	
-	public Fattura caricaElencoFatture(String nomeFile) throws ClassNotFoundException, IOException
+	public ElencoFatture caricaElencoFatture(String nomeFile) throws ClassNotFoundException, IOException
 	{
 		FileInputStream file=new FileInputStream(nomeFile);
 		ObjectInputStream reader=new ObjectInputStream(file);
-		Fattura f2=(Fattura)(reader.readObject());
+		ElencoFatture elenco;
+		elenco = (ElencoFatture) reader.readObject();
 		file.close();
-		return f2;
+		return elenco;
 	}
 	
 	
