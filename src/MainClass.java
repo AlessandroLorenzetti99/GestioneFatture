@@ -12,9 +12,21 @@ import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.Scanner;
 
+
+/**
+ * La classe rappresenta la main class dell'applicazione
+ * 
+ * @author Alessandro Lorenzetti
+ * 
+ *
+ */
+
 public class MainClass implements Serializable 
 {
-
+	/**
+	 * Funzione Main, da questa funzione viene avviato il programma
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		int posizione = 0;
