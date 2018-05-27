@@ -98,7 +98,7 @@ public class MainClass implements Serializable
 			
 			System.out.println("Inserisci lo stato dela fattura");
 			try {
-				f.setStatoFattura(tastiera.readChar());
+				f.setStatoFattura(tastiera.readBoolean());
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
@@ -150,7 +150,7 @@ public class MainClass implements Serializable
 				System.out.println("Eccexione");
 			}
 			
-			f5.setStatoFattura('P');
+			f5.setStatoFattura(true);
 			
 			
 			System.out.println(lista.toString());
@@ -248,7 +248,7 @@ public class MainClass implements Serializable
 					// TODO Auto-generated catch block
 					System.out.println("Errore generico");
 				}
-				if (f7.getStatoFattura() != 'P' &&  f7.getNomeEnte().compareToIgnoreCase(nomeCliente)==0)
+				if (f7.getStatoFattura() != true &&  f7.getNomeEnte().compareToIgnoreCase(nomeCliente)==0)
 				{
 					totaleFattureNonPagate +=  f7.getImporto();
 				}
@@ -283,7 +283,7 @@ public class MainClass implements Serializable
 					// TODO Auto-generated catch block
 					System.out.println("Errore generico");
 				}
-				if (f8.getStatoFattura() == 'P' &&  f8.getNomeEnte().compareToIgnoreCase(nomeCliente)==0)
+				if (f8.getStatoFattura() == true &&  f8.getNomeEnte().compareToIgnoreCase(nomeCliente)==0)
 				{
 					totaleFatturePagate +=  f8.getImporto();
 				}

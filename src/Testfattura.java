@@ -11,7 +11,7 @@ class Testfattura {
 	public void testAnno()
 	{
 		LocalDate data= LocalDate.now();
-		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
+		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
 		assertEquals("Anno = 2018",2018,f1.getAnno());
 	}
 	
@@ -19,7 +19,7 @@ class Testfattura {
 	public void TestNumeroProgressivoi()
 	{
 		LocalDate data= LocalDate.now();
-		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
+		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
 		assertEquals("i = 1",0,f1.getI());
 	}
 	
@@ -27,7 +27,7 @@ class Testfattura {
 	public void TestNomeEnte()
 	{
 		LocalDate data= LocalDate.now();
-		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
+		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
 		assertEquals("Nome Ente = Alessendro Lorenzetti","Alessandro Lorenzetti",f1.getNomeEnte());
 	}
 	
@@ -35,7 +35,7 @@ class Testfattura {
 	public void TestDescrizione()
 	{
 		LocalDate data= LocalDate.now();
-		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
+		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
 		assertEquals("Descrizione1","Descrizione1",f1.getDescrizioneProdotto());
 	}
 	
@@ -43,7 +43,7 @@ class Testfattura {
 	public void TestImporto()
 	{
 		LocalDate data= LocalDate.now();
-		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
+		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
 		assertEquals("importo = 1000",1000,f1.getImporto());
 	}
 	

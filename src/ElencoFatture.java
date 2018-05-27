@@ -301,6 +301,6 @@ public class ElencoFatture implements Serializable
 	{
 		Fattura f1 = new Fattura();
 		f1 = getFattura(posizione);
-		f1.setStatoFattura('P');
+		f1.setStatoFattura(true);
 	}
 }

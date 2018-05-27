@@ -12,8 +12,8 @@ class ElencoFatureTest {
 	{
 		ElencoFatture listaTest = new ElencoFatture();
 		LocalDate data= LocalDate.now();
-		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
-		Fattura f2 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
+		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
+		Fattura f2 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
 		
 		listaTest.inserisciInTesta(f1);
 		listaTest.inserisciInTesta(f2);
@@ -27,8 +27,8 @@ class ElencoFatureTest {
 	{
 		ElencoFatture listaTest = new ElencoFatture();
 		LocalDate data= LocalDate.now();
-		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
-		Fattura f2 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
+		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
+		Fattura f2 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
 		
 		try {
 			listaTest.inserisciInCoda(f1);
@@ -52,8 +52,8 @@ class ElencoFatureTest {
 	{
 		ElencoFatture listaTest = new ElencoFatture();
 		LocalDate data= LocalDate.now();
-		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
-		Fattura f2 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,'P');
+		Fattura f1 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
+		Fattura f2 = new Fattura(data,2018,1,"Alessandro Lorenzetti","Descrizione1",1000,true);
 		
 		listaTest.inserisciInTesta(f1);
 		listaTest.inserisciInTesta(f2);

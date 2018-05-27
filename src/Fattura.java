@@ -18,7 +18,7 @@ public class Fattura implements Serializable
 	private String nomeEnte;
 	private String descrizioneProdotto;
 	private int importo;
-	private char statoFattura;
+	private boolean statoFattura;  // false = non pagata, true = Pagata
 	private boolean fatturaErrata;
 	
 	/**
@@ -33,7 +33,7 @@ public class Fattura implements Serializable
 	 * @param metodoPagamento Char che rapprsenta il meto di pagamento che il cliente / ente utlilizza
 	 * @param statoFattura Char che rappresenta se una fattura è già stata pagata 
 	 */
-	public Fattura(LocalDate data, int anno, int i,String nomeEnte,String descrizioneProdotto, int importo,char statoFattura)
+	public Fattura(LocalDate data, int anno, int i,String nomeEnte,String descrizioneProdotto, int importo,boolean statoFattura)
 	{
 		i++;
 		setData(data);
@@ -55,7 +55,7 @@ public class Fattura implements Serializable
 		setDescrizioneProdotto(null);
 		setImporto(0);
 		setI(0);
-		setStatoFattura(' ');
+		setStatoFattura(false);
 		
 	}
 	/**
@@ -151,7 +151,7 @@ public class Fattura implements Serializable
 	 * @return
 	 */
 
-	public char getStatoFattura()
+	public boolean getStatoFattura()
 	{
 		return statoFattura;
 	}
@@ -160,7 +160,7 @@ public class Fattura implements Serializable
 	 * @param statoFattura
 	 */
 
-	public void setStatoFattura(char statoFattura)
+	public void setStatoFattura(boolean statoFattura)
 	{
 		this.statoFattura = statoFattura;
 	}
