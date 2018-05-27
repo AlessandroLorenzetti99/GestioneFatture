@@ -95,16 +95,7 @@ public class MainClass implements Serializable
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
 			}
-			System.out.println("Inserisci metodo di pagamento:");
-			try {
-				f.setMetodoPagamento(tastiera.readChar());
-			} catch (NumberFormatException e1) {
-				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
-			}
+			
 			System.out.println("Inserisci lo stato dela fattura");
 			try {
 				f.setStatoFattura(tastiera.readChar());

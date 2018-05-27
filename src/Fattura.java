@@ -18,7 +18,6 @@ public class Fattura implements Serializable
 	private String nomeEnte;
 	private String descrizioneProdotto;
 	private int importo;
-	private char metodoPagamento;
 	private char statoFattura;
 	private boolean fatturaErrata;
 	
@@ -34,7 +33,7 @@ public class Fattura implements Serializable
 	 * @param metodoPagamento Char che rapprsenta il meto di pagamento che il cliente / ente utlilizza
 	 * @param statoFattura Char che rappresenta se una fattura è già stata pagata 
 	 */
-	public Fattura(LocalDate data, int anno, int i,String nomeEnte,String descrizioneProdotto, int importo,char metodoPagamento,char statoFattura)
+	public Fattura(LocalDate data, int anno, int i,String nomeEnte,String descrizioneProdotto, int importo,char statoFattura)
 	{
 		i++;
 		setData(data);
@@ -44,7 +43,6 @@ public class Fattura implements Serializable
 		setNomeEnte(nomeEnte);
 		setDescrizioneProdotto(descrizioneProdotto);
 		setImporto(importo);
-		setMetodoPagamento(metodoPagamento);
 		setStatoFattura(statoFattura);
 	}
 	/**
@@ -57,7 +55,6 @@ public class Fattura implements Serializable
 		setDescrizioneProdotto(null);
 		setImporto(0);
 		setI(0);
-		setMetodoPagamento(' ');
 		setStatoFattura(' ');
 		
 	}
@@ -148,24 +145,7 @@ public class Fattura implements Serializable
 		this.importo = importo;
 	}
 	
-	/**
-	 * restituisce un char che speciica il metodo di pagamento che il cliente utilizzerà
-	 * @return
-	 */
-
-	public char getMetodoPagamento() 
-	{
-		return metodoPagamento;
-	}
-	/**
-	 * Metodo che permette di modificare il metodo di pagameto che il cliente desidera utilizzare.
-	 * @param metodoPagamento
-	 */
-
-	public void setMetodoPagamento(char metodoPagamento)
-	{
-		this.metodoPagamento = metodoPagamento;
-	}
+	
 	/**
 	 * retituisce un char che specifica se la fattura è stata pagata
 	 * @return
@@ -191,7 +171,7 @@ public class Fattura implements Serializable
 	
 	public String toString()
 	{
-		return "Fattura numero:" + getAnno() + "_" +getI()  +" " + isFatturaErrata() + '\n' + "DATA:" + getData() + '\n' + "NOME:" + getNomeEnte() + '\n' + "DESCRIZIONE:" + getDescrizioneProdotto() + '\n' + "IMPORTO" + getImporto() + '\n' + "M.PAGAM. :" + getMetodoPagamento() + '\n' + "STATO:" + getStatoFattura();
+		return "Fattura numero:" + getAnno() + "_" +getI()  +" " + isFatturaErrata() + '\n' + "DATA:" + getData() + '\n' + "NOME:" + getNomeEnte() + '\n' + "DESCRIZIONE:" + getDescrizioneProdotto() + '\n' + "IMPORTO" + getImporto() + '\n' +  "STATO:" + getStatoFattura();
 	}
 	/**
 	 * Restituisce l'anno della fattura
