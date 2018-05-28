@@ -29,6 +29,7 @@ public class MainClass implements Serializable
 	 */
 	public static void main(String[] args)
 	{
+		boolean errore = false; // segnalatore di errore
 		int posizione = 0;
 		ConsoleInput tastiera = new ConsoleInput();
 		
@@ -52,12 +53,12 @@ public class MainClass implements Serializable
 		catch (ClassNotFoundException e4)
 		{
 			// TODO Auto-generated catch block
-			System.out.println("errore 1");
+			System.out.println("!");
 		}
 		catch (IOException e4)
 		{
 			// TODO Auto-generated catch block
-			System.out.println("Errore 2");
+			System.out.println("Il File storage.bin manca o non è stato trovato!");
 		}
 		//*********************************************************************************************
 		
@@ -71,44 +72,75 @@ public class MainClass implements Serializable
 		case 1:
 			LocalDate data1= LocalDate.now();
 			//Aggiungi \ crea fattura
+			
+			do
+			{
 			System.out.println("inserisci anno della fattura:");
-			try {
+			try 
+			{
 				f.setAnno(tastiera.readInt());
-			} catch (NumberFormatException e) {
+				errore = false;
+			} 
+			catch (NumberFormatException e)
+			{
 				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
+				System.out.println("Il valore inserito non è un numero:");
+				errore = true;
 			}
-			System.out.println("Inserisci il nome ente della fattura");
-			f.setNomeEnte(onlyString.nextLine());
-			System.out.println("inserisci la descrizione del prodotto:");
-			f.setDescrizioneProdotto(onlyString.nextLine());
-			System.out.println("inserisci importo:");
-			try {
-				f.setImporto(tastiera.readInt());
-			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
-			} catch (IOException e) {
+			catch (IOException e) 
+			{
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
 			}
 			
-			System.out.println("Inserisci lo stato dela fattura");
-			try {
-				f.setStatoFattura(tastiera.readBoolean());
-			} catch (NumberFormatException e) {
+			} while (errore != false);
+			
+			
+			System.out.println("Inserisci il nome ente della fattura");
+			f.setNomeEnte(onlyString.nextLine());
+			
+			
+			System.out.println("inserisci la descrizione del prodotto:");
+			f.setDescrizioneProdotto(onlyString.nextLine());
+			
+			
+			System.out.println("inserisci importo:");
+			try 
+			{
+				f.setImporto(tastiera.readInt());
+			} 
+			catch (NumberFormatException e) 
+			{
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
-			} catch (IOException e) {
+			} 
+			catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				System.out.println("Il valore inserito non è un numero.");
+			}
+			
+			System.out.println("Inserisci lo stato dela fattura");
+			try 
+			{
+				f.setStatoFattura(tastiera.readBoolean());
+			} 
+			catch (NumberFormatException e) 
+			{
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
 			}
-			try {
+			catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				System.out.println("Errore generico.");
+			}
+			try
+			{
 				lista.inserisciInCoda(f);
-			} catch (ElencoFattureException e) {
+			}
+			catch (ElencoFattureException e)
+			{
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
 			}
@@ -119,7 +151,8 @@ public class MainClass implements Serializable
 			{
 				lista.salvaElencoFatture("storage.bin");
 				
-			} catch (IOException e3) {
+			} catch (IOException e3)
+			{
 				// TODO Auto-generated catch block
 				System.out.println("Errore");
 			}
