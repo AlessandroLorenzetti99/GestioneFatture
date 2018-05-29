@@ -13,20 +13,11 @@ import java.util.Locale;
 import java.util.Scanner;
 
 
-/**
- * La classe rappresenta la main class dell'applicazione
- * 
- * @author Alessandro Lorenzetti
- * 
- *
- */
+
 
 public class MainClass implements Serializable 
 {
-	/**
-	 * Funzione Main, da questa funzione viene avviato il programma
-	 * @param args
-	 */
+	
 	public static void main(String[] args)
 	{
 		boolean errore = false; // segnalatore di errore
@@ -178,26 +169,38 @@ public class MainClass implements Serializable
 			//***********************************************************************************
 		
 			break;
+			
+			
 		case 2:
 			//Segnala Fattura come pagata
 			Fattura f5 = new Fattura();
 			
-			System.out.println("Inserire l numero della fattura da segnalare come pagata:");
-			try {
+			System.out.println("Inserire il numero della fattura da segnalare come pagata:");
+			try 
+			{
 				posizione = tastiera.readInt();
-			} catch (NumberFormatException e1) {
+			} catch (NumberFormatException e1) 
+			{
 				// TODO Auto-generated catch block
 				System.out.println("eccezione numerica...");
-			} catch (IOException e1) {
+			}
+			catch (IOException e1)
+			{
 				// TODO Auto-generated catch block
 				System.out.println("Input inserito non corretto");
 			}
 			
-			try {
+			try 
+			{
+				
 				f5 = lista.getFattura(posizione);
-			} catch (ElencoFattureException e1) {
+			
+			} catch (ElencoFattureException e1) 
+			{
+				
 				// TODO Auto-generated catch block
 				System.out.println("Eccexione");
+				
 			}
 			
 			f5.setStatoFattura(true);
@@ -213,20 +216,37 @@ public class MainClass implements Serializable
 			posizione = 0;
 			Fattura f6=new Fattura();
 			System.out.println("Inserisci numero fattura da segnalare come errata");
-			try {
+			try 
+			{
+				
 				posizione = tastiera.readInt();
-			} catch (NumberFormatException e2) {
-				// TODO Auto-generated catch block
+				
+			} 
+			catch (NumberFormatException e2)
+			{
+				
 				System.out.println("Numero non accettato");
-			} catch (IOException e2) {
-				// TODO Auto-generated catch block
+			} 
+			catch (IOException e2)
+			{
+				
+
 				System.out.println("Numero non valido");
+				
 			}
-			try {
+			
+			
+			
+			try 
+			{
+				
 				f6 = lista.getFattura(posizione);
-			} catch (ElencoFattureException e1) {
-				// TODO Auto-generated catch block
-			System.out.println("Errore");
+				
+			} 
+			catch (ElencoFattureException e1)
+			{
+				
+				System.out.println("Errore");
 			}
 			
 			f6.setFatturaErrata(true);
@@ -406,9 +426,15 @@ public class MainClass implements Serializable
 		case 8:
 			for (int i = 1; i < lista.getElementi(); i++)
 			{
-				try {
+				try 
+				{
+					
 					System.out.println(lista.visualizza(i));
-				} catch (ElencoFattureException e)
+					
+				} 
+				
+				catch (ElencoFattureException e)
+				
 				{
 					// TODO Auto-generated catch block
 					System.out.println("errore");

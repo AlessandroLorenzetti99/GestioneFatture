@@ -1,13 +1,7 @@
 
 public class Ordinatore 
 {
-	/**
-	 * La Funzione scambia due valori all'interno di un Array Numerico 
-	 * @param array
-	 * @param pos1
-	 * @param pos2
-	 * @return 0 Se eseguito correttamente
-	 */
+	
 	public static int scambia (int[] array, int pos1, int pos2)
 	{
 		int s;
@@ -21,13 +15,7 @@ public class Ordinatore
 			return 0;
 		}			
 	}
-	/**
-	 * La Funzione scambia due posizioni all'interno di un array di stringhe
-	 * @param array
-	 * @param pos1
-	 * @param pos2
-	 * @return 0
-	 */
+	
 	public static int scambia (String[] array, int pos1, int pos2)
 	{
 		String s;
@@ -41,12 +29,7 @@ public class Ordinatore
 			return 0;
 		}			
 	}
-	/**
-	 * crea la Copia di un array in cui si andrà 
-	 * a Ordinare i valori.
-	 * @param array
-	 * @return arrayCopia
-	 */
+	
 	private static int[] copiaArray(int[] array)
 	{
 		int[] arrayCopia=new int[array.length];
@@ -54,11 +37,7 @@ public class Ordinatore
 			arrayCopia[i]=array[i];
 		return arrayCopia;
 	}
-	/**
-	 * crea una copia di un array si Stringhe
-	 * @param array
-	 * @return arrayCopia
-	 */
+	
 	private static String[] copiaArray(String[] array)
 	{
 		String[] arrayCopia=new String[array.length];
@@ -66,12 +45,7 @@ public class Ordinatore
 			arrayCopia[i]=array[i];
 		return arrayCopia;
 	}
-	/**
-	 * Ordina i valori dell'array di copia  in Ordine Decrescente
-	 * Va utilizzato: Array=Ordinatore.selectionSortDecrescente(arrayDaOrdinare) 
-	 * @param array
-	 * @return arrayCopia
-	 */
+	
 	public static int[] selectionSortDecrescente(int[] array)
 	{
 		int[] arrayCopia=copiaArray(array);
@@ -88,12 +62,7 @@ public class Ordinatore
 		return arrayCopia;
 	
 	}
-	/**
-	 *  Ordina i valori dell'array di copia  in Ordine crescente
-	 * Va utilizzato: Array=Ordinatore.selectionSortCrescente(arrayDaOrdinare) 
-	 * @param array
-	 * @return arrayCopia
-	 */
+	
 	public static int[] selectionSortCrescente(int[] array)
 	{
 		int[] arrayCopia=copiaArray(array);
@@ -111,12 +80,7 @@ public class Ordinatore
 	
 	}
 	
-/**
- *  Ordina i valori dell'array di copia  in Ordine Decrescente (Si utilizza Per Le stringhe
-	 * Va utilizzato: Array=Ordinatore.selectionSortDecrescente(arrayDaOrdinare) 
- * @param array
- * @return arrayCopia
- */
+
 	public static String[] selectionSortDecrescente(String[] array)
 	{
 		String[] arrayCopia=copiaArray(array);
@@ -134,12 +98,7 @@ public class Ordinatore
 	
 	}
 	
-	/**
-	 *  Ordina i valori dell'array di copia  in Ordine Crescente (utilizzato per stringhe)
-	 * Va utilizzato: Array=Ordinatore.selectionSortCrescente(arrayDaOrdinare) 
-	 * @param array
-	 * @return arrayCopia
-	 */
+	
 	public static String[] selectionSortCrescente(String[] array)
 	{
 		String[] arrayCopia=copiaArray(array);

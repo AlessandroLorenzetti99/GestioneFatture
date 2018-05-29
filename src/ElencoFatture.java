@@ -5,49 +5,30 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-/**
- * La seguente classe rapprsenta una lista di Fatture
- * @author Alessandro Lorenzetti
- *
- */
+
 public class ElencoFatture implements Serializable
 {
 	private Nodo head;
 	private int elementi;
-	/**
-	 * ElencoFatture Crea una nuova Lista di fatture
-	 */
+	
 	public ElencoFatture()
 	{
 		head=null;
 		elementi=0;
 	}
-	/**
-	 * Restituisce il numero di elementi inseriti
-	 * @return
-	 */
+	
 	public int getElementi()
 	{
 		return elementi;
 	}
-	/**
-	 * Crea un nuovo Nodo
-	 * @param fattura (Fattura)
-	 * @param link (Nodo)
-	 * @return (Nodo)
-	 */
+	
 	private Nodo creaNodo(Fattura fattura, Nodo link)
 	{
 		Nodo nodo=new Nodo(fattura);
 		nodo.setLink(link);
 		return nodo;
 	}
-	/**
-	 * Restituisce il Nodo dell'Elemento seguente
-	 * @param posizione
-	 * @return
-	 * @throws ElencoFattureException
-	 */
+	
 	private Nodo getLinkPosizione(int posizione) throws ElencoFattureException
 	{
 		if(posizione<1 || posizione>getElementi())
@@ -65,19 +46,14 @@ public class ElencoFatture implements Serializable
 		}
 		return p;
 	}
-	/**
-	 * Inserisce una fattura in Testa allo Stack
-	 * @param fattura
-	 */
+	
 	public void inserisciInTesta(Fattura fattura)
 	{
 		Nodo p=creaNodo(fattura,head);
 		head=p;
 		elementi++;
 	}
-	/**
-	 * Restituisce una stringa con uno schema dei vari nodi
-	 */
+	
 	public String toString()
 	{
 		String risultato="Head";
@@ -92,11 +68,7 @@ public class ElencoFatture implements Serializable
 		}
 		return risultato;
 	}
-	/**
-	 * Inserisce in coda allo stack una fattura
-	 * @param fattura
-	 * @throws ElencoFattureException
-	 */
+	
 	public void inserisciInCoda(Fattura fattura) throws ElencoFattureException
 	{
 		if(elementi==0)
@@ -109,12 +81,7 @@ public class ElencoFatture implements Serializable
 		p.setLink(pn);
 		elementi++;
 	}
-	/**
-	 * Permette di inserire una fattura in una specifica posizione definita dall'utente
-	 * @param posizione
-	 * @param fattura
-	 * @throws ElencoFattureException
-	 */
+	
 	public void inserisciInPosizione(int posizione,Fattura fattura) throws ElencoFattureException
 	{
 		if(posizione<=1)
@@ -132,10 +99,7 @@ public class ElencoFatture implements Serializable
 		precedente.setLink(pn);
 		elementi++;
 	}
-	/**
-	 * Permette di eliminae una fattura(Non usata)
-	 * @throws ElencoFattureException
-	 */
+	
 	public void eliminaInTesta() throws ElencoFattureException
 	{
 		if(elementi==0)
@@ -181,12 +145,7 @@ public class ElencoFatture implements Serializable
 		precedente.setLink(p.getLink());
 		elementi--;
 	} 
-	/**
-	 * Visualizza la fattura in stringa in una determinata posizione
-	 * @param posizione
-	 * @return
-	 * @throws ElencoFattureException
-	 */
+	
 	public String visualizza(int posizione) throws ElencoFattureException
 	{
 		if(posizione<=0 || posizione>elementi)
@@ -196,12 +155,7 @@ public class ElencoFatture implements Serializable
 		Nodo p=getLinkPosizione(posizione);
 		return p.getInfo().toString();
 	}
-	/**
-	 * Restituisce una fattura in formato Oggetto(Fattura)
-	 * @param posizione
-	 * @return
-	 * @throws ElencoFattureException
-	 */
+	
 	public Fattura getFattura(int posizione) throws ElencoFattureException
 	{
 		if(posizione<=0 || posizione>elementi)
@@ -255,11 +209,7 @@ public class ElencoFatture implements Serializable
 		return festa;
 	}
 	*/
-	/**
-	 * Permette di salvare Elenco Fatture
-	 * @param nomeFile
-	 * @throws IOException
-	 */
+	
 	public void salvaElencoFatture(String nomeFile) throws IOException
 	{
 		FileOutputStream file=new FileOutputStream(nomeFile);
@@ -268,13 +218,7 @@ public class ElencoFatture implements Serializable
 		writer.flush();
 		file.close();
 	}
-	/**
-	 * Carica le fatture da un file binario(.bin)
-	 * @param nomeFile
-	 * @return
-	 * @throws ClassNotFoundException
-	 * @throws IOException
-	 */
+	
 	public ElencoFatture caricaElencoFatture(String nomeFile) throws ClassNotFoundException, IOException
 	{
 		FileInputStream file=new FileInputStream(nomeFile);
@@ -292,11 +236,7 @@ public class ElencoFatture implements Serializable
 	}
 	*/
 	
-	/**
-	 * Permette  di segnalare una fattura come Pagata
-	 * @param posizione
-	 * @throws ElencoFattureException
-	 */
+	
 	public void segnalaFatturaPagata(int posizione) throws ElencoFattureException
 	{
 		Fattura f1 = new Fattura();
