@@ -96,6 +96,7 @@ public class MainClass implements Serializable
 			} while (errore != false);
 			
 			
+			
 			System.out.println("Inserisci il nome ente della fattura");
 			f.setNomeEnte(onlyString.nextLine());
 			
@@ -103,38 +104,54 @@ public class MainClass implements Serializable
 			System.out.println("inserisci la descrizione del prodotto:");
 			f.setDescrizioneProdotto(onlyString.nextLine());
 			
+			do 
+			{
+				
 			
 			System.out.println("inserisci importo:");
 			try 
 			{
 				f.setImporto(tastiera.readInt());
+				errore = false;
 			} 
 			catch (NumberFormatException e) 
 			{
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
+				errore = true;
 			} 
 			catch (IOException e)
 			{
 				// TODO Auto-generated catch block
 				System.out.println("Il valore inserito non è un numero.");
+				errore = true;
 			}
 			
+			} while (errore != false);
+			
+			
+			do
+			{
 			System.out.println("Inserisci lo stato dela fattura");
 			try 
 			{
 				f.setStatoFattura(tastiera.readBoolean());
+				errore = false;
 			} 
 			catch (NumberFormatException e) 
 			{
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
+				errore = true;
 			}
 			catch (IOException e)
 			{
 				// TODO Auto-generated catch block
 				System.out.println("Errore generico.");
+				errore = true;
 			}
+			} while (errore != false);
+			
 			try
 			{
 				lista.inserisciInCoda(f);
@@ -142,7 +159,7 @@ public class MainClass implements Serializable
 			catch (ElencoFattureException e)
 			{
 				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
+				System.out.println("Errore Nel salvataggio dell'elmento nella lista!");
 			}
 			
 			//*******************AVVIO FILE DI STOCCAGGIO DATI*****************************
