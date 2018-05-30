@@ -5,19 +5,18 @@ import java.time.LocalDate;
 public class Fattura implements Serializable
 {
 	private LocalDate data;
-	//private ID id;  crea attributo anno e numero progressivo
 	private int anno;
-	private static int i = 0; //numero progressivo
+	private static int i; //numero progressivo
 	private String nomeEnte;
 	private String descrizioneProdotto;
 	private int importo;
-	private boolean statoFattura;  // false = non pagata, true = Pagata
+	private boolean statoFattura = false;  // false = non pagata, true = Pagata inizialmente false
 	private boolean fatturaErrata;
 	
 	
 	public Fattura(LocalDate data, int anno, int i,String nomeEnte,String descrizioneProdotto, int importo,boolean statoFattura)
 	{
-		i++;
+		//i++; 
 		setData(data);
 		//setId(id);
 		setI(i);
@@ -30,11 +29,12 @@ public class Fattura implements Serializable
 	
 	public Fattura()
 	{
+		//i++;//contatore incremento
 		setData(null);
 		setAnno(0);
 		setDescrizioneProdotto(null);
 		setImporto(0);
-		setI(0);
+		setI(i); 
 		setStatoFattura(false);
 		
 	}
@@ -139,7 +139,7 @@ public class Fattura implements Serializable
 
 	public static void setI(int i) 
 	{
-		
+		i++;
 		Fattura.i = i;
 	}
 	

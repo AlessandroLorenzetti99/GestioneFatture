@@ -229,12 +229,7 @@ public class ElencoFatture implements Serializable
 		return elenco;
 	}
 	
-	/*
-	public void segnalaFatturaErrata(int posizione)
-	{
-		
-	}
-	*/
+	
 	
 	
 	public void segnalaFatturaPagata(int posizione) throws ElencoFattureException

@@ -30,7 +30,7 @@ public class MainClass implements Serializable
 		Scanner onlyString = new Scanner(System.in);
 		ElencoFatture lista = new ElencoFatture();
 		
-		Fattura f = new Fattura();
+		
 		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate ","6   --->   visualizza importo fatture non pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza"};
 		Menu m1 = new Menu(elenco);
 		int continua = 0; // Se = 1 stop
@@ -38,7 +38,7 @@ public class MainClass implements Serializable
 		//***********************CARICAMENTO DATI DA STORAGE.BIN*************************
 		try 
 		{
-			//lista.salvaElencoFatture("storage.bin");
+			
 			lista.caricaElencoFatture("storage.bin");
 		} 
 		catch (ClassNotFoundException e4)
@@ -61,11 +61,13 @@ public class MainClass implements Serializable
 		switch (m1.scelta())
 		{
 		case 1:
+			Fattura f = new Fattura();
 			LocalDate data1= LocalDate.now();
 			//Aggiungi \ crea fattura
 			
 			do
 			{
+				System.out.println("Fattura numero:" + f.getI());
 			System.out.println("inserisci anno della fattura:");
 			try 
 			{
@@ -121,28 +123,6 @@ public class MainClass implements Serializable
 			} while (errore != false);
 			
 			
-			do
-			{
-			System.out.println("Inserisci lo stato dela fattura");
-			try 
-			{
-				f.setStatoFattura(tastiera.readBoolean());
-				errore = false;
-			} 
-			catch (NumberFormatException e) 
-			{
-				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
-				errore = true;
-			}
-			catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				System.out.println("Errore generico.");
-				errore = true;
-			}
-			} while (errore != false);
-			
 			try
 			{
 				lista.inserisciInCoda(f);
@@ -159,7 +139,8 @@ public class MainClass implements Serializable
 			{
 				lista.salvaElencoFatture("storage.bin");
 				
-			} catch (IOException e3)
+			} 
+			catch (IOException e3)
 			{
 				// TODO Auto-generated catch block
 				System.out.println("Errore");
@@ -179,7 +160,8 @@ public class MainClass implements Serializable
 			try 
 			{
 				posizione = tastiera.readInt();
-			} catch (NumberFormatException e1) 
+			} 
+			catch (NumberFormatException e1) 
 			{
 				// TODO Auto-generated catch block
 				System.out.println("eccezione numerica...");
@@ -194,8 +176,10 @@ public class MainClass implements Serializable
 			{
 				
 				f5 = lista.getFattura(posizione);
+				
 			
-			} catch (ElencoFattureException e1) 
+			}
+			catch (ElencoFattureException e1) 
 			{
 				
 				// TODO Auto-generated catch block
@@ -203,7 +187,16 @@ public class MainClass implements Serializable
 				
 			}
 			
-			f5.setStatoFattura(true);
+			
+			
+			if(f5.getStatoFattura() == false)
+			{
+				f5.setStatoFattura(true);
+			}
+			else
+			{
+				System.out.println("Fattura già pagata");
+			}
 			
 			
 			System.out.println(lista.toString());
@@ -424,12 +417,13 @@ public class MainClass implements Serializable
 			
 			break;
 		case 8:
-			for (int i = 1; i < lista.getElementi(); i++)
+			for (int i = 0; i < lista.getElementi(); i++)
 			{
 				try 
 				{
 					
-					System.out.println(lista.visualizza(i));
+					System.out.println("Elemento" + lista.getFattura(i).toString());
+					System.out.println("-------------------------------------------");
 					
 				} 
 				
@@ -437,7 +431,7 @@ public class MainClass implements Serializable
 				
 				{
 					// TODO Auto-generated catch block
-					System.out.println("errore");
+					System.out.println("Fattura vuota.");
 				}
 			}
 			break;
