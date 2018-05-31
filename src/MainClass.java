@@ -31,6 +31,7 @@ public class MainClass implements Serializable
 		ElencoFatture lista = new ElencoFatture();
 		
 		
+		
 		String[] elenco = {"Gestione Fatture 2018","1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate ","6   --->   visualizza importo fatture non pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza"};
 		Menu m1 = new Menu(elenco);
 		int continua = 0; // Se = 1 stop
@@ -49,7 +50,7 @@ public class MainClass implements Serializable
 		catch (IOException e4)
 		{
 			// TODO Auto-generated catch block
-			System.out.println("Il File storage.bin manca o non è stato trovato!");
+			System.out.println("Il File storage.bin è danneggiato o inesistente");
 		}
 		//*********************************************************************************************
 		
@@ -119,6 +120,8 @@ public class MainClass implements Serializable
 				System.out.println("Il valore inserito non è un numero.");
 				errore = true;
 			}
+			
+			f.setData(data1);
 			
 			} while (errore != false);
 			
@@ -417,7 +420,7 @@ public class MainClass implements Serializable
 			
 			break;
 		case 8:
-			for (int i = 0; i < lista.getElementi(); i++)
+			for (int i = 1; i < lista.getElementi(); i++)
 			{
 				try 
 				{

@@ -209,6 +209,19 @@ public class ElencoFatture implements Serializable
 		return festa;
 	}
 	*/
+	public void stampaFattureSuTextFile(String nomeFile) throws IOException, ElencoFattureException, FileException
+	{
+		TextFile file = new TextFile(nomeFile, 'W');
+		Fattura fatturaDascrivere;
+		String personaCSV;
+		for (int i = 1; i <=getElementi(); i++) 
+		{
+			fatturaDascrivere=getFattura(i);
+			personaCSV=fatturaDascrivere.getI()+";"+fatturaDascrivere.getNomeEnte()+";"+fatturaDascrivere.getDescrizioneProdotto();
+			file.toFile(personaCSV);
+		}
+		file.closeFile();
+	}
 	
 	public void salvaElencoFatture(String nomeFile) throws IOException
 	{
@@ -224,7 +237,7 @@ public class ElencoFatture implements Serializable
 		FileInputStream file=new FileInputStream(nomeFile);
 		ObjectInputStream reader=new ObjectInputStream(file);
 		ElencoFatture elenco;
-		elenco = (ElencoFatture) reader.readObject();
+		elenco = (ElencoFatture)(reader.readObject());
 		file.close();
 		return elenco;
 	}
@@ -232,10 +245,5 @@ public class ElencoFatture implements Serializable
 	
 	
 	
-	public void segnalaFatturaPagata(int posizione) throws ElencoFattureException
-	{
-		Fattura f1 = new Fattura();
-		f1 = getFattura(posizione);
-		f1.setStatoFattura(true);
-	}
+	
 }
