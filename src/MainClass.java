@@ -235,8 +235,9 @@ public class MainClass implements Serializable
 				
 			}
 			
-			
-			
+			f6 = (Fattura)Database.get(posizione);
+			Database.remove(posizione);
+			/*
 			try 
 			{
 				
@@ -256,6 +257,11 @@ public class MainClass implements Serializable
 				// TODO Auto-generated catch block
 				System.out.println("errore");
 			}
+			*/
+			
+			f6.setFatturaErrata(true);
+			
+			Database.add(f6);
 			
 			break;
 			
