@@ -9,6 +9,7 @@ import java.time.LocalTime;
 import java.time.Month;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
+import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -20,6 +21,7 @@ public class MainClass implements Serializable
 	
 	public static void main(String[] args)
 	{
+		LinkedList Database = new LinkedList();
 		Start st1 = new Start('*', 50, "GESTIONE FATTURE 2018.");
 		boolean errore = false; // segnalatore di errore
 		int posizione = 0;
@@ -124,18 +126,14 @@ public class MainClass implements Serializable
 			
 			f.setData(data1);
 			
+			Database.add(f);
+			
+			System.out.println(Database);
+			
 			} while (errore != false);
 			
 			
-			try
-			{
-				lista.inserisciInCoda(f);
-			}
-			catch (ElencoFattureException e)
-			{
-				// TODO Auto-generated catch block
-				System.out.println("Errore Nel salvataggio dell'elmento nella lista!");
-			}
+			
 			
 			//*******************AVVIO FILE DI STOCCAGGIO DATI*****************************
 				
