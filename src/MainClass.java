@@ -18,9 +18,15 @@ import java.util.Scanner;
 
 public class MainClass implements Serializable 
 {
+	public static void LoadProgram()
+	{
+		
+	}
 	
 	public static void main(String[] args)
 	{
+		LoadProgram();
+		int contatore_i = 0;
 		LinkedList Database = new LinkedList();
 		Start st1 = new Start('*', 50, "GESTIONE FATTURE 2018.");
 		boolean errore = false; // segnalatore di errore
@@ -35,7 +41,7 @@ public class MainClass implements Serializable
 		
 		
 		
-		String[] elenco = {"1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate ","6   --->   visualizza importo fatture non pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza"};
+		String[] elenco = {"1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate ","6   --->   visualizza importo fatture non pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza","9   --->   Salva ed Esci."};
 		Menu m1 = new Menu(elenco);
 		char continua = 'S'; // Se = 1 stop
 		
@@ -126,7 +132,9 @@ public class MainClass implements Serializable
 			
 			f.setData(data1);
 			
-			Database.add(f);
+			contatore_i ++;
+			
+			Database.add(contatore_i,f);
 			
 			System.out.println(Database);
 			
