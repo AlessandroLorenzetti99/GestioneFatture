@@ -173,6 +173,9 @@ public class MainClass implements Serializable
 				System.out.println("Input inserito non corretto");
 			}
 			
+			f5 = (Fattura)Database.get(posizione);
+			Database.remove(posizione);
+			/*
 			try 
 			{
 				
@@ -187,6 +190,7 @@ public class MainClass implements Serializable
 				System.out.println("Eccexione");
 				
 			}
+			*/
 			
 			
 			
@@ -200,7 +204,9 @@ public class MainClass implements Serializable
 			}
 			
 			
-			System.out.println(lista.toString());
+			//System.out.println(lista.toString());
+			
+			Database.add(f5);
 			
 			
 			break;
