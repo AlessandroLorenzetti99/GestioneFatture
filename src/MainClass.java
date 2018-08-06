@@ -35,30 +35,28 @@ public class MainClass implements Serializable
 		
 		String[] elenco = {"1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate ","6   --->   visualizza importo fatture non pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza"};
 		Menu m1 = new Menu(elenco);
-		int continua = 0; // Se = 1 stop
+		char continua = 'S'; // Se = 1 stop
 		
 		//***********************CARICAMENTO DATI DA STORAGE.BIN*************************
 		try 
 		{
 			
 			lista.caricaElencoFatture("storage.bin");
-			System.out.println(lista.getElementi());
+			System.out.println("Fatture caricate: " + lista.getElementi());
 		} 
 		catch (ClassNotFoundException e4)
 		{
-			// TODO Auto-generated catch block
 			System.out.println("!");
 		}
 		catch (IOException e4)
 		{
-			// TODO Auto-generated catch block
 			System.out.println("Il File storage.bin è danneggiato o inesistente");
 		}
 		//*********************************************************************************************
 		
 		st1.visualizza();
 		
-		while(continua == 0)
+		while(continua == 's' || continua == 'S')
 		{
 			
 		
@@ -169,7 +167,6 @@ public class MainClass implements Serializable
 			} 
 			catch (NumberFormatException e1) 
 			{
-				// TODO Auto-generated catch block
 				System.out.println("eccezione numerica...");
 			}
 			catch (IOException e1)
@@ -447,17 +444,23 @@ public class MainClass implements Serializable
 			break;
 		}
 		
-		System.out.println("Continuare?");
+		System.out.println("Continuare? S/N");
 		try
 		{
-			continua = tastiera.readInt();
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			System.out.println("Errore generico");
+			continua = tastiera.readChar();
 		} 
-		catch (IOException e)
+		
+		catch (NumberFormatException e)
+		
 		{
-			// TODO Auto-generated catch block
+			
+			System.out.println("Errore generico");
+		}
+		
+		catch (IOException e)
+		
+		{
+			
 			System.out.println("Errore generico");
 		}
 
