@@ -1,6 +1,10 @@
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -25,7 +29,9 @@ public class MainClass implements Serializable
 	
 	public static void main(String[] args)
 	{
+	
 		LoadProgram();
+		
 		int contatore_i = 0;
 		LinkedList Database = new LinkedList();
 		Start st1 = new Start('*', 50, "GESTIONE FATTURE 2018.");
@@ -38,6 +44,33 @@ public class MainClass implements Serializable
 		
 		Scanner onlyString = new Scanner(System.in);
 		ElencoFatture lista = new ElencoFatture();
+		
+		//inizializza
+		FileInputStream contatore_R = null;
+		try 
+		{
+			contatore_R = new FileInputStream("contatore.bin");
+		} catch (FileNotFoundException e5) {
+			System.err.println("FNF");
+		}
+		try
+		{
+			contatore_i = contatore_R.read();
+		} 
+		catch (IOException e5) 
+		{
+			System.err.println("IOE");
+		}
+		try
+		{
+			contatore_R.close();
+		}
+		catch (IOException e5)
+		{
+			System.err.println("IOE");
+		}
+		
+		System.out.println("Contatore Letto = " + contatore_i);
 		
 		
 		
@@ -132,9 +165,9 @@ public class MainClass implements Serializable
 			
 			f.setData(data1);
 			
-			contatore_i ++;
-			
 			Database.add(contatore_i,f);
+			
+			contatore_i ++;
 			
 			System.out.println(Database);
 			
@@ -144,7 +177,7 @@ public class MainClass implements Serializable
 			
 			
 			//*******************AVVIO FILE DI STOCCAGGIO DATI*****************************
-				
+			/*	
 			try
 			{
 				lista.salvaElencoFatture("storage.bin");
@@ -158,6 +191,9 @@ public class MainClass implements Serializable
 			
 			
 			//***********************************************************************************
+			  
+			 */
+			
 		
 			break;
 			
@@ -456,6 +492,28 @@ public class MainClass implements Serializable
 				}
 			}
 			break;
+			
+		case 9:
+			FileOutputStream contatore = null;
+			try 
+			{
+				contatore = new FileOutputStream("contatore.bin");
+			} 
+			catch (FileNotFoundException e1)
+			{
+				
+				System.err.println("fnf");
+			}
+			
+			try 
+			{
+				contatore.write(contatore_i);
+			} 
+			catch (IOException e1)
+			{
+				System.err.println("ioe");
+			}
+			break;
 
 		default:
 			System.out.println("opzione non disponibile!");
@@ -481,8 +539,85 @@ public class MainClass implements Serializable
 			
 			System.out.println("Errore generico");
 		}
+		
+		
 
 	}
+		
+		//chiusura ----------
+		
+		FileOutputStream contatore = null;
+		try 
+		{
+			contatore = new FileOutputStream("contatore.bin");
+		} 
+		catch (FileNotFoundException e1)
+		{
+			
+			System.err.println("fnf");
+		}
+		
+		try 
+		{
+			contatore.write(contatore_i);
+		} 
+		catch (IOException e1)
+		{
+			System.err.println("ioe");
+		}
+		
+		//System.out.println(contatore.toString());
+		
+		try
+		{
+			contatore.close();
+		}
+		catch (IOException e)
+		{
+			System.err.println("IOE");
+		}
+		
+		//salvataggio file
+		
+		FileOutputStream salva = null;
+		try {
+			salva = new FileOutputStream("storage.bin");
+		} catch (FileNotFoundException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		ObjectOutputStream buff = null;
+		try {
+			buff = new ObjectOutputStream(salva);
+		} catch (IOException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		
+		try {
+			buff.writeObject(Database);
+		} catch (IOException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		
+		try {
+			buff.close();
+		} catch (IOException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		
+		try {
+			salva.close();
+		} catch (IOException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+	
+		
+		
+		
 	}
 
 }
