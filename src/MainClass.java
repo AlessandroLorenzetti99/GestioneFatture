@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.DayOfWeek;
@@ -50,8 +51,11 @@ public class MainClass implements Serializable
 		try 
 		{
 			contatore_R = new FileInputStream("contatore.bin");
-		} catch (FileNotFoundException e5) {
+		} 
+		catch (FileNotFoundException e5) 
+		{
 			System.err.println("FNF");
+			
 		}
 		try
 		{
@@ -74,10 +78,54 @@ public class MainClass implements Serializable
 		
 		
 		
+		// carica lista
+		
+		FileInputStream carica = null;
+		try {
+			carica = new FileInputStream("storage.bin");
+		} 
+		catch (FileNotFoundException e5) 
+		{
+			System.err.println("FNF");
+		}
+		ObjectInputStream load = null;
+		try {
+			load = new ObjectInputStream(carica);
+		} catch (IOException e5) {
+			System.err.println("Nessun file letto");
+		}
+		
+		try {
+			Database = (LinkedList) load.readObject();
+		} catch (ClassNotFoundException e5) {
+			System.err.println(errore);
+		} catch (IOException e5) {
+			System.err.println("Errore");
+		}
+		
+		try {
+			load.close();
+		} catch (IOException e5) {
+			// TODO Auto-generated catch block
+			e5.printStackTrace();
+		}
+		
+		try {
+			carica.close();
+		} catch (IOException e5) {
+			// TODO Auto-generated catch block
+			e5.printStackTrace();
+		}
+		
+		System.out.println("Lista caricata");
+		
+		
+		
 		String[] elenco = {"1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate ","6   --->   visualizza importo fatture non pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza","9   --->   Salva ed Esci."};
 		Menu m1 = new Menu(elenco);
 		char continua = 'S'; // Se = 1 stop
 		
+		/*
 		//***********************CARICAMENTO DATI DA STORAGE.BIN*************************
 		try 
 		{
@@ -94,7 +142,7 @@ public class MainClass implements Serializable
 			System.out.println("Il File storage.bin è danneggiato o inesistente");
 		}
 		//*********************************************************************************************
-		
+		*/
 		st1.visualizza();
 		
 		while(continua == 's' || continua == 'S')
