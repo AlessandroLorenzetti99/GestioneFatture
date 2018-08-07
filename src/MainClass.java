@@ -34,6 +34,9 @@ public class MainClass implements Serializable
 		LoadProgram();
 		
 		int contatore_i = 0;
+		
+		
+		
 		LinkedList Database = new LinkedList();
 		Start st1 = new Start('*', 50, "GESTIONE FATTURE 2018.");
 		boolean errore = false; // segnalatore di errore
@@ -55,6 +58,25 @@ public class MainClass implements Serializable
 		catch (FileNotFoundException e5) 
 		{
 			System.err.println("FNF");
+			FileOutputStream defau = null;
+			try {
+				defau = new FileOutputStream("contatore.bin");
+			} catch (FileNotFoundException e4) {
+				// TODO Auto-generated catch block
+				e4.printStackTrace();
+			}
+			try {
+				defau.write(0);
+			} catch (IOException e4) {
+				// TODO Auto-generated catch block
+				e4.printStackTrace();
+			}
+			try {
+				defau.close();
+			} catch (IOException e4) {
+				// TODO Auto-generated catch block
+				e4.printStackTrace();
+			}
 			
 		}
 		try
@@ -77,47 +99,50 @@ public class MainClass implements Serializable
 		System.out.println("Contatore Letto = " + contatore_i);
 		
 		
-		
-		// carica lista
-		
-		FileInputStream carica = null;
-		try {
-			carica = new FileInputStream("storage.bin");
-		} 
-		catch (FileNotFoundException e5) 
+		if (contatore_i != 0)
 		{
-			System.err.println("FNF");
-		}
-		ObjectInputStream load = null;
-		try {
-			load = new ObjectInputStream(carica);
-		} catch (IOException e5) {
-			System.err.println("Nessun file letto");
+			// carica lista
+			
+			FileInputStream carica = null;
+			try {
+				carica = new FileInputStream("storage.bin");
+			} 
+			catch (FileNotFoundException e5) 
+			{
+				System.err.println("FNF");
+			}
+			ObjectInputStream load = null;
+			try {
+				load = new ObjectInputStream(carica);
+			} catch (IOException e5) {
+				System.err.println("Nessun file letto");
+			}
+			
+			try {
+				Database = (LinkedList) load.readObject();
+			} catch (ClassNotFoundException e5) {
+				System.err.println(errore);
+			} catch (IOException e5) {
+				System.err.println("Errore");
+			}
+			
+			try {
+				load.close();
+			} catch (IOException e5) {
+				// TODO Auto-generated catch block
+				e5.printStackTrace();
+			}
+			
+			try {
+				carica.close();
+			} catch (IOException e5) {
+				// TODO Auto-generated catch block
+				e5.printStackTrace();
+			}
+			
+			System.out.println("Lista caricata");
 		}
 		
-		try {
-			Database = (LinkedList) load.readObject();
-		} catch (ClassNotFoundException e5) {
-			System.err.println(errore);
-		} catch (IOException e5) {
-			System.err.println("Errore");
-		}
-		
-		try {
-			load.close();
-		} catch (IOException e5) {
-			// TODO Auto-generated catch block
-			e5.printStackTrace();
-		}
-		
-		try {
-			carica.close();
-		} catch (IOException e5) {
-			// TODO Auto-generated catch block
-			e5.printStackTrace();
-		}
-		
-		System.out.println("Lista caricata");
 		
 		
 		
