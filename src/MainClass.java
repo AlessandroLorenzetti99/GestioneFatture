@@ -43,8 +43,7 @@ public class MainClass implements Serializable
 		int posizione = 0;
 		ConsoleInput tastiera = new ConsoleInput();
 		
-		//InputStreamReader input = new InputStreamReader(System.in);
-		//BufferedReader tastiera = BufferedReader(input);
+		
 		
 		Scanner onlyString = new Scanner(System.in);
 		ElencoFatture lista = new ElencoFatture();
@@ -150,24 +149,7 @@ public class MainClass implements Serializable
 		Menu m1 = new Menu(elenco);
 		char continua = 'S'; // Se = 1 stop
 		
-		/*
-		//***********************CARICAMENTO DATI DA STORAGE.BIN*************************
-		try 
-		{
-			
-			lista.caricaElencoFatture("storage.bin");
-			System.out.println("Fatture caricate: " + lista.getElementi());
-		} 
-		catch (ClassNotFoundException e4)
-		{
-			System.out.println("!");
-		}
-		catch (IOException e4)
-		{
-			System.out.println("Il File storage.bin è danneggiato o inesistente");
-		}
-		//*********************************************************************************************
-		*/
+		
 		st1.visualizza();
 		
 		while(continua == 's' || continua == 'S')
@@ -245,28 +227,6 @@ public class MainClass implements Serializable
 			System.out.println(Database);
 			
 			} while (errore != false);
-			
-			
-			
-			
-			//*******************AVVIO FILE DI STOCCAGGIO DATI*****************************
-			/*	
-			try
-			{
-				lista.salvaElencoFatture("storage.bin");
-				
-			} 
-			catch (IOException e3)
-			{
-				// TODO Auto-generated catch block
-				System.out.println("Errore");
-			}
-			
-			
-			//***********************************************************************************
-			  
-			 */
-			
 		
 			break;
 			
@@ -294,22 +254,7 @@ public class MainClass implements Serializable
 			Database.remove(posizione);
 			
 			
-			/*
-			try 
-			{
-				
-				f5 = lista.getFattura(posizione);
-				
 			
-			}
-			catch (ElencoFattureException e1) 
-			{
-				
-				// TODO Auto-generated catch block
-				System.out.println("Eccexione");
-				
-			}
-			*/
 			
 			
 			
@@ -358,27 +303,6 @@ public class MainClass implements Serializable
 			
 			f6 = (Fattura)Database.get(posizione);
 			Database.remove(posizione);
-			/*
-			try 
-			{
-				
-				f6 = lista.getFattura(posizione);
-				
-			} 
-			catch (ElencoFattureException e1)
-			{
-				
-				System.out.println("Errore");
-			}
-			
-			f6.setFatturaErrata(true);
-			try {
-				System.out.println(lista.visualizza(posizione));
-			} catch (ElencoFattureException e1) {
-				// TODO Auto-generated catch block
-				System.out.println("errore");
-			}
-			*/
 			
 			f6.setFatturaErrata(true);
 			
@@ -410,42 +334,7 @@ public class MainClass implements Serializable
 				}
 				
 			}
-			/*
-			//trasferimento dati lista ---> Array
-			Fattura[] ArrayFatture;
 			
-			ArrayFatture = new Fattura[lista.getElementi()];
-			
-			for (int i = 1; i < lista.getElementi(); i++)
-			{
-				try {
-					ArrayFatture[i] = lista.getFattura(i);
-				} catch (ElencoFattureException e) {
-					// TODO Auto-generated catch block
-					System.out.println("Errore");
-				}
-			}
-			
-			//***************ORDINA DATI******************
-			
-			
-			
-			
-			
-			
-			//***********************************************
-			
-			
-			//*************VISUALIZZA DATI*****************
-			
-			
-			
-			
-			
-			//************************************************
-			 * 
-			 * 
-			 */
 			
 			break;
 			
@@ -473,38 +362,8 @@ public class MainClass implements Serializable
 			System.out.println("Le fatture non pagate dal cliente " + nomeCliente + " ammontano ad " + totaleFattureNonPagate + "€");
 			
 			
-			/*
-			Fattura f7 = new Fattura();
-			String nomeCliente = null;
-			
-			
-			int totaleFattureNonPagate  = 0;
-			System.out.println("Inserisci il nome del cliente:");
-			nomeCliente = onlyString.nextLine();
-			
-			for (int i = 1; i < lista.getElementi(); i++)
-			{
-				try 
-				{
-					f7 = lista.getFattura(i);
-				} 
-				catch (ElencoFattureException e1)
-				{
-					// TODO Auto-generated catch block
-					System.out.println("Errore generico");
-				}
-				if (f7.getStatoFattura() != true &&  f7.getNomeEnte().compareToIgnoreCase(nomeCliente)==0)
-				{
-					totaleFattureNonPagate +=  f7.getImporto();
-				}
-				else
-				{
-					System.out.println("Non funge");
-				}
-			}
-			
-			System.out.println("It totale della fatture non pagate è:" + totaleFattureNonPagate);
-			*/
+
+
 				
 			break;
 			
@@ -531,39 +390,8 @@ public class MainClass implements Serializable
 			
 			System.out.println("Le fatture pagate dal cliente " + nomeCliente1 + " ammontano ad " + totaleFatturePagate + "€");
 			
-			/*
-			Fattura f8 = new Fattura();
-			String nomeCliente1 = null;
-			
-			
-			int totaleFatturePagate  = 0;
-			System.out.println("Inserisci il nome del cliente:");
-			nomeCliente = onlyString.nextLine();
-			
-			for (int i = 1; i < lista.getElementi(); i++)
-			{
-				try 
-				{
-					f7 = lista.getFattura(i);
-				} 
-				catch (ElencoFattureException e1)
-				{
-					// TODO Auto-generated catch block
-					System.out.println("Errore generico");
-				}
-				if (f8.getStatoFattura() == true &&  f8.getNomeEnte().compareToIgnoreCase(nomeCliente)==0)
-				{
-					totaleFatturePagate +=  f8.getImporto();
-				}
-				else
-				{
-					System.out.println("Non funge");
-				}
-			}
-			
-			System.out.println("It totale della fatture  pagate è:" + totaleFatturePagate);
-				
-			*/
+
+
 			
 			
 			
@@ -594,56 +422,7 @@ public class MainClass implements Serializable
 			
 			System.out.println("La fattura selezionata è:" + "\n" + f10.toString());
 			
-			/*
-			int anno = 0;
-			int numeroIdentificativo = 0;  //i = numero progressivo fattura
-			Fattura f10 = new Fattura();
-			
-			System.out.println("Inserisci anno del ID dell'utente:");
-			try
-			{
-				anno = tastiera.readInt();
-			}
-			catch (NumberFormatException e1) {
-				// TODO Auto-generated catch block
-				System.out.println("Il numer inserito non è valido");
-			} 
-			catch (IOException e1)
-			{
-				// TODO Auto-generated catch block
-				System.out.println("il valore inserito non è un numero");
-			}
-			
-			System.out.println("Inserisci numero progressivo fattura");
-			try {
-				numeroIdentificativo = tastiera.readInt();
-			} catch (NumberFormatException e1) 
-			{
-				// TODO Auto-generated catch block
-				System.out.println("Il numer inserito non è valido");
-			} catch (IOException e1)
-			{
-				// TODO Auto-generated catch block
-				System.out.println("il valore inserito non è un numero");
-			}
-			
-			for (int i = 0; i < lista.getElementi(); i++)
-			{
-				try {
-					f10 = lista.getFattura(i);
-				} catch (ElencoFattureException e) {
-					// TODO Auto-generated catch block
-					System.out.println("Errore generico");
-				}
-				
-				if(f10.getAnno() == anno && f10.getI() == numeroIdentificativo)
-				{
-					f10.toString();
-				}
-				
-			}
-			
-			*/
+
 			
 			break;
 		case 8:
@@ -661,26 +440,8 @@ public class MainClass implements Serializable
 				
 			}
 			
-			/*
-			for (int i = 1; i < lista.getElementi(); i++)
-			{
-				try 
-				{
-					
-					System.out.println("Elemento" + lista.getFattura(i).toString());
-					System.out.println("-------------------------------------------");
-					
-				} 
-				
-				catch (ElencoFattureException e)
-				
-				{
-					// TODO Auto-generated catch block
-					System.out.println("Fattura vuota.");
-				}
-			}
-			break;
-			*/
+
+
 			
 			break;
 
