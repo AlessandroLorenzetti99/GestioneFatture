@@ -650,7 +650,7 @@ public class MainClass implements Serializable
 			
 			//visualizza tutte le fatture
 			
-			System.out.println("ok");
+			//System.out.println("ok");
 			
 			Fattura f11 = new Fattura();
 			
