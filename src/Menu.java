@@ -39,7 +39,7 @@ public class Menu
 			try
 			{
 				voceScelta = tastiera.readInt();
-				if (voceScelta>= numeroVoci)
+				if (voceScelta> numeroVoci)
 				{
 					System.out.println("Opzione non disponibile");
 					
@@ -54,7 +54,7 @@ public class Menu
 				System.out.println("Impossibile leggere dal dispositivo di input riprovare...");
 			}
 			
-		} while (voceScelta <  0 || voceScelta >= numeroVoci);
+		} while (voceScelta <  0 || voceScelta > numeroVoci);
 		
 		return voceScelta;
 		

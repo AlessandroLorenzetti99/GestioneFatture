@@ -146,7 +146,7 @@ public class MainClass implements Serializable
 		
 		
 		
-		String[] elenco = {"1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate dal cliente ","6   --->   visualizza importo fatture pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza","9   --->   Salva ed Esci."};
+		String[] elenco = {"1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate dal cliente ","6   --->   visualizza importo fatture pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza tutte le fatture inserite."};
 		Menu m1 = new Menu(elenco);
 		char continua = 'S'; // Se = 1 stop
 		
@@ -647,6 +647,21 @@ public class MainClass implements Serializable
 			
 			break;
 		case 8:
+			
+			//visualizza tutte le fatture
+			
+			System.out.println("ok");
+			
+			Fattura f11 = new Fattura();
+			
+			for (int i = 0; i < Database.size(); i++)
+			{
+				f11 = (Fattura) Database.get(i);
+				System.out.println(f11.toString());
+				
+			}
+			
+			/*
 			for (int i = 1; i < lista.getElementi(); i++)
 			{
 				try 
@@ -665,27 +680,8 @@ public class MainClass implements Serializable
 				}
 			}
 			break;
+			*/
 			
-		case 9:
-			FileOutputStream contatore = null;
-			try 
-			{
-				contatore = new FileOutputStream("contatore.bin");
-			} 
-			catch (FileNotFoundException e1)
-			{
-				
-				System.err.println("fnf");
-			}
-			
-			try 
-			{
-				contatore.write(contatore_i);
-			} 
-			catch (IOException e1)
-			{
-				System.err.println("ioe");
-			}
 			break;
 
 		default:
