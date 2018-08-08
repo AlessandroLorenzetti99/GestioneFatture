@@ -292,6 +292,8 @@ public class MainClass implements Serializable
 			
 			f5 = (Fattura)Database.get(posizione);
 			Database.remove(posizione);
+			
+			
 			/*
 			try 
 			{
@@ -324,6 +326,8 @@ public class MainClass implements Serializable
 			//System.out.println(lista.toString());
 			
 			Database.add(f5);
+			
+			System.out.println(f5.toString());
 			
 			
 			break;
@@ -378,13 +382,35 @@ public class MainClass implements Serializable
 			
 			f6.setFatturaErrata(true);
 			
-			Database.add(f6);
+			Database.add(posizione,f6);
 			
 			break;
 			
 		case 4:
 			//Visualizza tutte fatture in ordine di data di emissione
 			
+			Fattura arra [];
+			
+			arra = new Fattura[Database.size()];
+			
+			for (int i = 0; i < arra.length; i++)
+			{
+				arra[i] = (Fattura) Database.get(i);
+				
+			}
+			
+			for (int i = 0; i < arra.length-1; i++)
+			{
+				if (arra[i].getData().isAfter(arra[i+1].getData()) || arra[i].getData().equals(arra[i+1].getData()))
+				{
+					
+					System.out.println(arra[i].toString() + "\n" + "---------" + "\n" + arra[i+1].toString());
+					System.out.println("-------------------------------------------------------------------");
+					
+				}
+				
+			}
+			/*
 			//trasferimento dati lista ---> Array
 			Fattura[] ArrayFatture;
 			
@@ -417,6 +443,9 @@ public class MainClass implements Serializable
 			
 			
 			//************************************************
+			 * 
+			 * 
+			 */
 			
 			break;
 			
