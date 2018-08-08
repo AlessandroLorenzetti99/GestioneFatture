@@ -146,7 +146,7 @@ public class MainClass implements Serializable
 		
 		
 		
-		String[] elenco = {"1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate ","6   --->   visualizza importo fatture non pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza","9   --->   Salva ed Esci."};
+		String[] elenco = {"1.   --->   Aggiungi fattura","2.   --->   Segnala Fattura Pagata","3.   --->  Registra fattura Sbagliata","4.   --->   Visualizza fatture in ordine di data di emissione","5.   --->   visualizza totale fatture non pagate dal cliente ","6   --->   visualizza importo fatture pagate dal cliente","7   --->   visualizzare dati di una fattura tramite ID","8   --->   Visualizza","9   --->   Salva ed Esci."};
 		Menu m1 = new Menu(elenco);
 		char continua = 'S'; // Se = 1 stop
 		
@@ -511,7 +511,25 @@ public class MainClass implements Serializable
 		case 6:
 			//visualizza importo fatture pagate dal cliente
 			
+			Fattura f8 = new Fattura();
+			int totaleFatturePagate = 0;
+			String nomeCliente1 = null;
 			
+			System.out.println("Inserisci il nome del cliente:");
+			nomeCliente1 = onlyString.nextLine();
+			
+			for (int i = 0; i < Database.size(); i++)
+			{
+				f7 = (Fattura) Database.get(i);
+				
+				if (f8.getNomeEnte().equalsIgnoreCase(nomeCliente1) == true && f8.getStatoFattura() == true)
+				{
+					totaleFatturePagate = totaleFatturePagate + f8.getImporto();
+				}
+				
+			}
+			
+			System.out.println("Le fatture pagate dal cliente " + nomeCliente1 + " ammontano ad " + totaleFatturePagate + "€");
 			
 			/*
 			Fattura f8 = new Fattura();
@@ -554,6 +572,29 @@ public class MainClass implements Serializable
 		case 7:
 			
 			//visualizzare dati di una fattura tramite ID
+			
+			Fattura f10 = new Fattura();
+			int ID = 0;
+			
+			System.out.println("Inserisci l'ID della Fattura da Mostrare:");
+			try
+			{
+				ID = tastiera.readInt();
+			} 
+			catch (NumberFormatException e2)
+			{
+				System.err.println("NFE");
+			} 
+			catch (IOException e2)
+			{
+				System.err.println("IOE");
+			}
+			
+			f10 = (Fattura) Database.get(ID);
+			
+			System.out.println("La fattura selezionata è:" + "\n" + f10.toString());
+			
+			/*
 			int anno = 0;
 			int numeroIdentificativo = 0;  //i = numero progressivo fattura
 			Fattura f10 = new Fattura();
@@ -602,7 +643,7 @@ public class MainClass implements Serializable
 				
 			}
 			
-			
+			*/
 			
 			break;
 		case 8:
