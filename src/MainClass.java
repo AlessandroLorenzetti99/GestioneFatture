@@ -451,6 +451,29 @@ public class MainClass implements Serializable
 			
 		case 5:
 			//visualizza importo fatture non pagate dal cliente
+			
+			Fattura f7 = new Fattura();
+			int totaleFattureNonPagate = 0;
+			String nomeCliente = null;
+			
+			System.out.println("Inserisci il nome del cliente:");
+			nomeCliente = onlyString.nextLine();
+			
+			for (int i = 0; i < Database.size(); i++)
+			{
+				f7 = (Fattura) Database.get(i);
+				
+				if (f7.getNomeEnte().equalsIgnoreCase(nomeCliente) == true && f7.getStatoFattura() == false)
+				{
+					totaleFattureNonPagate = totaleFattureNonPagate + f7.getImporto();
+				}
+				
+			}
+			
+			System.out.println("Le fatture non pagate dal cliente " + nomeCliente + " ammontano ad " + totaleFattureNonPagate + "€");
+			
+			
+			/*
 			Fattura f7 = new Fattura();
 			String nomeCliente = null;
 			
@@ -481,11 +504,16 @@ public class MainClass implements Serializable
 			}
 			
 			System.out.println("It totale della fatture non pagate è:" + totaleFattureNonPagate);
+			*/
 				
 			break;
 			
 		case 6:
-			//visualizza importo fatture non pagate dal cliente
+			//visualizza importo fatture pagate dal cliente
+			
+			
+			
+			/*
 			Fattura f8 = new Fattura();
 			String nomeCliente1 = null;
 			
@@ -517,6 +545,8 @@ public class MainClass implements Serializable
 			
 			System.out.println("It totale della fatture  pagate è:" + totaleFatturePagate);
 				
+			*/
+			
 			
 			
 			break;
