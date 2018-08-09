@@ -18,7 +18,13 @@ import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
 
-
+/**
+ * La classe MainClass e la classe principale del programma
+ * 
+ * @author Alessandro Lorenzetti
+ * @version 1.0
+ *
+ */
 
 
 public class MainClass implements Serializable 
@@ -27,18 +33,26 @@ public class MainClass implements Serializable
 	{
 		
 	}
+	/**
+	 * La Funzione main Permette l'esecuzione del programma,
+	 * @param args
+	 */
 	
 	public static void main(String[] args)
 	{
 	
 		LoadProgram();
 		
+		
 		int contatore_i = 0;
 		
-		
-		
+		/**
+		 * La classe main è formata da un elemento LinkedList Database che rappresenta la lista 
+		 * dove verranno salvate tutte le fatture create dal programma.
+		 * 
+		 */
 		LinkedList Database = new LinkedList();
-		Start st1 = new Start('*', 50, "GESTIONE FATTURE 2018.");
+		Start st1 = new Start('*', 50, "GESTIONE FATTURE 2018."); /** Viene Invocata la clase Start che permette lA VISUALIZZAZIONE dell' titolo con interfaccia grafica prestabilita */
 		boolean errore = false; // segnalatore di errore
 		int posizione = 0;
 		ConsoleInput tastiera = new ConsoleInput();
