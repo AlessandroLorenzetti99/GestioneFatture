@@ -46,7 +46,6 @@ public class MainClass implements Serializable
 		
 		
 		Scanner onlyString = new Scanner(System.in);
-		ElencoFatture lista = new ElencoFatture();
 		
 		//inizializza
 		FileInputStream contatore_R = null;
