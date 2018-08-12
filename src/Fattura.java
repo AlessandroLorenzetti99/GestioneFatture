@@ -4,8 +4,8 @@ import java.time.LocalDate;
 /**
  * La classe Fattura rapresenta una fattura , accetta i seguenti parametri:
  * data(LocalDate) anno (int) NomeEnte (String) descrizioneProdotto (int) importo (boolean)statoFattura (boolean)fatturaErrata
- * @author ale
- *
+ * @author Alessandro Lorenzetti.
+ * @version 1.0
  */
  
 public class Fattura implements Serializable
