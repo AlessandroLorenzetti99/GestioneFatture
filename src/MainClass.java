@@ -19,7 +19,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 /**
- * La classe MainClass e la classe principale del programma
+ * La classe MainClass e la classe principale del programma.
  * 
  * @author Alessandro Lorenzetti
  * @version 1.0
@@ -62,6 +62,10 @@ public class MainClass implements Serializable
 		Scanner onlyString = new Scanner(System.in);
 		
 		//inizializza
+		/**
+		 * nella classe è presente un contatore che successivamente verrà alla fine
+		 * salvato su un file per Tenere conto delle fatture precedentemente inserite.
+		 */
 		FileInputStream contatore_R = null;
 		try 
 		{
