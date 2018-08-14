@@ -56,7 +56,7 @@ public class MainClass implements Serializable
 		
 		
 		
-		Scanner onlyString = new Scanner(System.in);
+		//Scanner onlyString = new Scanner(System.in);
 		
 		//inizializza
 		/**
@@ -203,11 +203,33 @@ public class MainClass implements Serializable
 			
 			
 			System.out.println("Inserisci il nome ente della fattura");
-			f.setNomeEnte(onlyString.nextLine());
+			try 
+			{
+				f.setNomeEnte(tastiera.readString());
+			}
+			catch (NumberFormatException e3)
+			{
+				System.err.println("NFE");
+			} 
+			catch (IOException e3) 
+			{
+				System.err.println("IOE");
+			}
 			
 			
 			System.out.println("inserisci la descrizione del prodotto:");
-			f.setDescrizioneProdotto(onlyString.nextLine());
+			try 
+			{
+				f.setDescrizioneProdotto(tastiera.readString());
+			}
+			catch (NumberFormatException e3)
+			{
+				System.err.println("NFE");
+			} 
+			catch (IOException e3)
+			{
+				System.err.println("IOE");
+			}
 			
 			do 
 			{
@@ -360,7 +382,18 @@ public class MainClass implements Serializable
 			String nomeCliente = null;
 			
 			System.out.println("Inserisci il nome del cliente:");
-			nomeCliente = onlyString.nextLine();
+			try
+			{
+				nomeCliente = tastiera.readString();
+			} 
+			catch (NumberFormatException e1)
+			{
+				System.err.println("NFE");
+			}
+			catch (IOException e1)
+			{
+				System.err.println("IOE");
+			}
 			
 			for (int i = 0; i < Database.size(); i++)
 			{
@@ -389,7 +422,18 @@ public class MainClass implements Serializable
 			String nomeCliente1 = null;
 			
 			System.out.println("Inserisci il nome del cliente:");
-			nomeCliente1 = onlyString.nextLine();
+			try
+			{
+				nomeCliente1 = tastiera.readString();
+			} 
+			catch (NumberFormatException e1)
+			{
+				System.err.println("NFE");
+			} 
+			catch (IOException e1)
+			{
+				System.err.println("IOE");
+			}
 			
 			for (int i = 0; i < Database.size(); i++)
 			{
