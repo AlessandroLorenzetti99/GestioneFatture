@@ -56,6 +56,12 @@ public class ConsoleInput
 		return(reader.readLine()).charAt(0);
 	}
 	
-	
+	public String readString() throws IOException, NumberFormatException
+	{
+		String s=reader.readLine();
+		if (s.compareTo("")==0)
+			throw new NumberFormatException();
+		return (s);
+	}
 	
 }
