@@ -29,10 +29,7 @@ import java.util.Scanner;
 
 public class MainClass implements Serializable 
 {
-	public static void LoadProgram()
-	{
-		
-	}
+	
 	/**
 	 * La Funzione main Permette l'esecuzione del programma,
 	 * @param args
@@ -41,7 +38,7 @@ public class MainClass implements Serializable
 	public static void main(String[] args)
 	{
 	
-		LoadProgram();
+		
 		
 		
 		int contatore_i = 0;
