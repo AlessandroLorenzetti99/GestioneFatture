@@ -42,43 +42,7 @@ public class MainClass implements Serializable
 	public static void main(String[] args)
 	{
 	
-		JFrame window = new JFrame("GestioneFatture2018 Vx.x");
-		
-		window.setBounds(500, 500, 600, 300);
-		
-		Container contenitore =  window.getContentPane();
-		
-		contenitore.setLayout(new BoxLayout(contenitore, BoxLayout.X_AXIS));
-		
-		JPanel sx = new JPanel();
-		JPanel sep = new JPanel();
-		JPanel dx = new JPanel();
-		
-		sx.setLayout(new BoxLayout(sx, BoxLayout.Y_AXIS));
-		sep.setLayout(new BoxLayout(sep, BoxLayout.Y_AXIS));
-		dx.setLayout(new BoxLayout(dx, BoxLayout.Y_AXIS));
-		
-		contenitore.add(sx);
-		contenitore.add(sep);
-		contenitore.add(dx);
-		
-		contenitore.setBackground(Color.GREEN);
-		
-		sep.add(new JButton("1"));
-		sep.add(new JButton("2"));
-		sep.add(new JButton("3"));
-		sep.add(new JButton("4"));
-		sep.add(new JButton("5"));
-		sep.add(new JButton("6"));
-		sep.add(new JButton("7"));
-		sep.add(new JButton("8"));
-		sep.add(new JButton("9"));
-		
-		//window.setLayout(manager);
-		
-		window.setVisible(true);
-		
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		SelectWindow s = new SelectWindow();
 		
 		
 		int contatore_i = 0;
