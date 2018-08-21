@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class SelectWindow 
+public class SelectWindow implements ActionListener
 {
 	Container contenitore =  new Container();
 	public SelectWindow()
@@ -67,6 +67,15 @@ public class SelectWindow
 	
 	public void view()
 	{
+		
+	}
+
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 
