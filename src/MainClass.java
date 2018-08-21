@@ -42,7 +42,9 @@ public class MainClass implements Serializable
 	public static void main(String[] args)
 	{
 	
-		SelectWindow s = new SelectWindow();
+		GraphicMenu menu = new GraphicMenu();
+		
+		//menu.setVisible(true);
 		
 		
 		int contatore_i = 0;
