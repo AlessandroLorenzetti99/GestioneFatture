@@ -12,7 +12,8 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class InserisciFattura extends JFrame {
+public class InserisciFattura extends JFrame
+{
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -42,7 +43,12 @@ public class InserisciFattura extends JFrame {
 	 * Create the frame.
 	 */
 	public InserisciFattura() {
+		
 		Fattura f = new Fattura();
+		String  nomeEnteFattura = null;
+		String descrizioneProdotto = null;
+		
+		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 397);
@@ -60,11 +66,15 @@ public class InserisciFattura extends JFrame {
 		JLabel lblNomeCliente = new JLabel("Nome Cliente:");
 		lblNomeCliente.setBounds(23, 11, 91, 14);
 		contentPane.add(lblNomeCliente);
+		nomeEnteFattura = lblNomeCliente.getText();
+		final String nomeEnteFatturaFinal = nomeEnteFattura;
 		
 		
 		JLabel lblDescrizione = new JLabel("Descrizione:");
 		lblDescrizione.setBounds(23, 66, 74, 14);
 		contentPane.add(lblDescrizione);
+		descrizioneProdotto = lblDescrizione.getText();
+		final String descrizioneProdottoFinal = descrizioneProdotto;
 		
 		
 		textField_1 = new JTextField();
@@ -112,6 +122,13 @@ public class InserisciFattura extends JFrame {
 			public void mouseExited(MouseEvent e) 
 			{
 				((JButton)e.getSource()).setBackground(Color.white);
+			}
+			@Override
+			public void mouseClicked(MouseEvent e)
+			{
+				Fattura fa = new Fattura();
+				fa.setNomeEnte(nomeEnteFatturaFinal);
+				fa.setDescrizioneProdotto(descrizioneProdottoFinal);
 			}
 		});
 		btnConferma.setBounds(234, 314, 91, 23);

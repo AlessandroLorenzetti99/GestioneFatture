@@ -179,6 +179,8 @@ public class MainClass implements Serializable
 		switch (m1.scelta())
 		{
 		case 1:
+//			InserisciFattura in = new InserisciFattura();
+//			in.setVisible(true);
 			Fattura f = new Fattura();
 			LocalDate data1= LocalDate.now();
 			//Aggiungi \ crea fattura
